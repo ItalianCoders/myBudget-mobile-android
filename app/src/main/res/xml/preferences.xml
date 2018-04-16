@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:entries="@array/language"
+        android:entryValues="@array/language_code"
+        android:icon="@drawable/translate"
+        android:key="@string/pref_key_language"
+        android:summary=""
+        android:title="@string/pref_language" />
+
+    <com.mynameismidori.currencypicker.CurrencyPreference
+        android:defaultValue="EUR"
+        android:entries="@array/empty_array"
+        android:entryValues="@array/empty_array"
+        android:icon="@drawable/money"
+        android:key="@string/pref_key_currency"
+        android:summary="@string/pref_currency_summary"
+        android:title="@string/pref_currency" />
+
+    <it.italiancoders.mybudget.preferences.chart.ChartColorThemePickerPreference
+        android:defaultValue="3"
+        android:key="@string/pref_key_chart_color_theme"
+        android:layout="@layout/item_preference_chart_theme"
+        android:icon="@drawable/money"
+        android:title="@string/charts_color_theme" />
+
+</PreferenceScreen>

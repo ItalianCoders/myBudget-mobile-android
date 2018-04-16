@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#43a047</color>
+    <color name="primaryLightColor">#75d27a</color>
+    <color name="primaryDarkColor">#00701a</color>
+
+    <color name="primaryTextColor">#000000</color>
+    <color name="primaryTextColorInverted">#ffffff</color>
+
+    <color name="textColorInactive">#aba5a5</color>
+    <color name="errorTextColor">#d62d20</color>
+
+    <color name="background_color">#ffffff</color>
+    <color name="background_color_dark">#efeded</color>
+
+    <color name="card_bg_color">#b1c2c0c0</color>
+    <color name="card_bg_color_dark">#b1292929</color>
+
+    <color name="even_row">#00ffffff</color>
+    <color name="odd_row">#bec4c3c3</color>
+
+    <color name="facebook">#3a5998</color>
+    <color name="google">#d62d20</color>
+
+    <color name="blue_grey_700">#455a64</color>
+    <color name="blue_grey_900">#263238</color>
+
+    <color name="light_red">#e2f42f2f</color>
+    <color name="light_gray">#d9d9d9</color>
+
+    <color name="welcome_login">#ffffff</color>
+    <color name="welcome_signup">#f1f1f1</color>
+</resources>

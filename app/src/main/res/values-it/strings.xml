@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_exit_dialog_content">Uscire dall\'applicazione?</string>
+
+    <string name="dialog_wait_content">Attendere prego…</string>
+
+    <string name="dialog_permission_mandatory_title">Permessi richiesti</string>
+    <string name="dialog_permission_mandatory_content">Tutte le autorizzazioni sono necessarie per questa app</string>
+
+    <string name="sign_up">Registrati</string>
+    <string name="login">Login</string>
+    <string name="log_with_social_account">Accedi con il tuo account social</string>
+    <string name="log_with_app_account">oppure con il tuo account di My Bugdet</string>
+
+    <string name="login_in_progress">Login in corso…</string>
+    <string name="login_successful">Login effettuato con successo</string>
+    <string name="login_invalid_credential">Username o password non validi</string>
+    <string name="login_error">Errore durante il login utente, per favore riprova più tardi</string>
+
+    <string name="registration_in_progress">Registrazione in corso…</string>
+    <string name="registration_error">Errore durante la registrazione utente</string>
+    <string name="registration_successfully">Registrazione effettuata con successo</string>
+
+    <string name="facebook">Facebook</string>
+    <string name="facebook_signin_title">Facebook Sign-In</string>
+
+    <string name="google">Google</string>
+    <string name="google_signin_title">Google Sign-In</string>
+
+    <string name="signed_in">Connesso</string>
+    <string name="signed_out">Disconnesso</string>
+    <string name="sign_out">Logout</string>
+    <string name="disconnect">Disconnetti</string>
+    <string name="sign_in_error">Errore durante il processo di registrazione</string>
+    <string name="id">ID %s</string>
+    <string name="no_email_permission">Permesso email non concesso</string>
+
+    <string name="settings">Impostazioni</string>
+    <string name="movements">Movimenti</string>
+
+    <string name="last_movements">Ultimi movimenti</string>
+
+    <string name="incoming">Entrate</string>
+    <string name="incoming_singular">Entrata</string>
+    <string name="expense">Uscite</string>
+    <string name="expense_singular">Uscita</string>
+    <string name="balance">Bilancio</string>
+
+    <string name="invalid_data">Dati inseriti non validi</string>
+
+    <string name="saving_movement">Salvataggio movimento…</string>
+    <string name="saving_movement_error">Errore durante il salvataggio del movimento</string>
+
+    <string name="loading_dashboard">Caricamento dashboard…</string>
+    <string name="loading_dashboard_error">Errore durante il caricamento dei dettagli dell\'account</string>
+
+    <string name="searching_users">Ricerca utenti in corso…</string>
+    <string name="searching_users_error">Errore durante la ricerca utenti</string>
+
+    <string name="sending_user_invite">Invio richiesta all\'utente…</string>
+    <string name="sending_user_invite_error">Errore durante l\'invio della richiesta</string>
+    <string name="sending_user_invite_successfull">Invito utente inviato con successo</string>
+
+    <string name="amount">Importo</string>
+    <string name="category">Categoria</string>
+    <string name="note">Note</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="first_name">Nome</string>
+    <string name="last_name">Cognome</string>
+    <string name="name">Nome</string>
+    <string name="description">Descrizione</string>
+    <string name="account">Account</string>
+
+    <string name="save_action">Salva</string>
+    <string name="new_f_action">Nuova</string>
+    <string name="new_m_action">Nuovo</string>
+    <string name="edit_f_action">Modifica</string>
+    <string name="edit_m_action">Edit</string>
+    <string name="refresh_action">Ricarica</string>
+    <string name="search_action">Cerca</string>
+    <string name="delete_action">Cancella</string>
+
+    <string name="chart_type_summary">Sommario</string>
+    <string name="chart_type_expense">Riepilogo uscite</string>
+    <string name="chart_type_incoming">Riepilogo entrate</string>
+    <string name="chart_type_details">Dettaglio</string>
+
+    <string name="or">o</string>
+
+    <string name="all_f">Tutte</string>
+    <string name="all_m">Tutti</string>
+
+    <string name="year">Anno</string>
+    <string name="month">Mese</string>
+    <string name="day">Giorno</string>
+
+    <string name="search_parameters">Search parameters</string>
+
+    <string name="go_to_month_search">Vai alla ricerca completa del mese</string>
+
+    <string name="others">Altro</string>
+
+    <string name="no_results_found">Nessun risultato per la ricerca</string>
+
+    <string name="user">Utente</string>
+
+    <string name="invite_user">Invita utente</string>
+    <string name="intite_user_confirm_dialog_title">Conferma l\'invito</string>
+    <string name="intite_user_confirm_dialog_message">Inviare all\'utente %s l\'invito di unirsi all\'account %s?</string>
+
+    <string name="account_select">Seleziona un account</string>
+
+    <string name="confirm">Conferma</string>
+    <string name="reject">Rifiuta</string>
+
+    <string name="user_pending_invite_loading">Caricamento inviti in corso…</string>
+    <string name="user_pending_invite_error">Errore durante il caricamento degli inviti…</string>
+
+    <string name="confirmation_sent">Conferma inviata</string>
+    <string name="declined_sent">Rifiuto inviato</string>
+    <string name="reply_sending">Invio risposta…</string>
+    <string name="reply_send_error">Errore durante l\'invio della risposta</string>
+
+    <string name="account_saving">Salvataggio account…</string>
+    <string name="account_saving_error">Errore durante il salvataggio dell\'account</string>
+    <string name="account_saving_successfull">Salvataggio effettuato con successo</string>
+</resources>

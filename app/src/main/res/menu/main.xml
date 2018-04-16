@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.MainActivity_">
+
+    <item
+        android:id="@+id/menuNotification"
+        android:title="_notification"
+        app:actionLayout="@layout/menu_action_item_badge"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuNotificationUserInvite"
+        android:title="_message"
+        app:actionLayout="@layout/menu_action_item_badge"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menuInviteUser"
+        android:title="@string/invite_user"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuEditAccount"
+        android:title="@string/edit_m_action"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuNewAccount"
+        android:title="@string/new_m_action"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menuRefresh"
+        android:title="@string/refresh_action"
+        app:showAsAction="never" />
+
+</menu>

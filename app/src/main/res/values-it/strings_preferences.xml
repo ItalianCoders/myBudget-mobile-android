@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language">Lingua</string>
+
+    / --------------------- language -----------------------------
+    <string name="pref_language">Language</string>
+
+    <string name="change_language_dialog_title">Attenzione</string>
+    <string name="change_language_dialog_message">Il cambio della lingua necessita il riavvio dell\'applicazione, effettuarlo ora?</string>
+
+    // ---------------------- currency ----------------------------
+    <string name="pref_currency">Valute</string>
+    <string name="pref_currency_summary">Scegli una valuta</string>
+
+    // ---------------------- chart -------------------------------
+    <string name="charts_color_theme">Tema grafici</string>
+</resources>

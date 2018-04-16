@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/movementsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:focusable="false"
+        android:groupIndicator="@drawable/group_indicator"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/textView3"
+        android:layout_above="@id/goToSearchButton">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/light_gray"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@color/light_gray"
+        android:gravity="center_vertical"
+        android:text="@string/last_movements"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Small"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/goToSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:drawableStart="@drawable/search"
+        android:text="@string/go_to_month_search" />
+
+</RelativeLayout>

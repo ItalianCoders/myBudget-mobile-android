@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language">
+        <item>Italiano</item>
+        <item>Inglese</item>
+    </string-array>
+
+    <string-array name="language_code">
+        <item>IT</item>
+        <item>EN</item>
+    </string-array>
+
+    <string-array name="dashboard_chart_type_name">
+        <item>@string/chart_type_summary</item>
+        <item>@string/chart_type_expense</item>
+        <item>@string/chart_type_incoming</item>
+        <item>@string/chart_type_details</item>
+    </string-array>
+</resources>

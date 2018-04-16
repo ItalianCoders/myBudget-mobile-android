@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menuBottomNotification"
+        android:enabled="true"
+        android:title="_notification"
+        android:icon="@drawable/notifications"
+        app:actionLayout="@layout/menu_action_item_badge"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menuBottomNotificationUserInvite"
+        android:enabled="true"
+        android:icon="@drawable/user"
+        android:title="_message"
+        app:actionLayout="@layout/menu_action_item_badge"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_summary"
+        android:title="@string/chart_type_summary" />
+    <item
+        android:id="@+id/item_expense"
+        android:title="@string/chart_type_expense" />
+    <item
+        android:id="@+id/item_incoming"
+        android:title="@string/chart_type_incoming" />
+    <item
+        android:id="@+id/item_details"
+        android:title="@string/chart_type_details" />
+</menu>

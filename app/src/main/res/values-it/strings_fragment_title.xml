@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fragment_title_welcome">Login</string>
+    <string name="fragment_title_search_movements">Ricerca movimenti</string>
+    <string name="fragment_title_notification">Notifiche</string>
+</resources>

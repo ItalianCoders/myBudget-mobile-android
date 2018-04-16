@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // --------------------- keys ---------------------------------
+    <string name="pref_key_language" translatable="false">language</string>
+    <string name="pref_key_currency" translatable="false">currency</string>
+    <string name="pref_key_chart_color_theme" translatable="false">chartColorTheme</string>
+
+    // --------------------- language -----------------------------
+    <string name="pref_language">Language</string>
+
+    <string name="change_language_dialog_title">Attention</string>
+    <string name="change_language_dialog_message">The change of language need to restart the application, do so now?</string>
+
+    // ---------------------- currency ----------------------------
+    <string name="pref_currency">Currency</string>
+    <string name="pref_currency_summary">Pick currency</string>
+
+    // ---------------------- chart -------------------------------
+    <string name="charts_color_theme">Charts theme</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="empty_array" />
+
+    <string-array name="language">
+        <item>Italian</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="language_code">
+        <item>IT</item>
+        <item>EN</item>
+    </string-array>
+
+    <integer-array name="dashboard_chart_type">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="dashboard_chart_type_name">
+        <item>@string/chart_type_summary</item>
+        <item>@string/chart_type_expense</item>
+        <item>@string/chart_type_incoming</item>
+        <item>@string/chart_type_details</item>
+    </string-array>
+
+    <array name="cateogory_icons">
+        <item>@drawable/category_saving</item>
+        <item>@drawable/category_salary</item>
+        <item>@drawable/category_gift</item>
+        <item>@drawable/category_clothes</item>
+        <item>@drawable/category_animal</item>
+        <item>@drawable/category_car</item>
+        <item>@drawable/category_bill</item>
+        <item>@drawable/category_home</item>
+        <item>@drawable/category_food</item>
+        <item>@drawable/category_phone</item>
+        <item>@drawable/category_body_care</item>
+        <item>@drawable/category_restaurant</item>
+        <item>@drawable/category</item>
+        <item>@drawable/category_healt</item>
+        <item>@drawable/category_sport</item>
+        <item>@drawable/category_transport</item>
+        <item>@drawable/category_general</item>
+    </array>
+</resources>

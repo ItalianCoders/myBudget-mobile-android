@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/welcome_login"
+    android:fitsSystemWindows="true">
+
+    <it.italiancoders.mybudget.view.FlexibleFrameLayout
+        android:id="@+id/wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:id="@+id/loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <it.italiancoders.mybudget.fragment.login.LoginButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/signUpFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </it.italiancoders.mybudget.view.FlexibleFrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>
