@@ -103,12 +103,10 @@ object MenuItemBadge {
     }
 
     fun formatNumber(value: Int, limitLength: Boolean): String {
-        return if (value < 0) {
-            "-" + formatNumber(-value, limitLength)
-        } else if (value < 100) {
-            java.lang.Long.toString(value.toLong())
-        } else {
-            "99+"
+        return when {
+            value < 0 -> "-" + formatNumber(-value, limitLength)
+            value < 100 -> java.lang.Long.toString(value.toLong())
+            else -> "99+"
         }
 
     }
