@@ -14,6 +14,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import it.italiancoders.mybudget.Config
 import it.italiancoders.mybudget.R
 import it.italiancoders.mybudget.activity.MainActivity
+import it.italiancoders.mybudget.adapter.account.AccountAdapter
 import it.italiancoders.mybudget.fragment.BaseFragment
 import it.italiancoders.mybudget.fragment.account.AccountFragment_
 import it.italiancoders.mybudget.fragment.account.invite.InviteUserFragment_
@@ -23,8 +24,11 @@ import it.italiancoders.mybudget.fragment.main.movements.AccountDetailsLastMovem
 import it.italiancoders.mybudget.fragment.movement.MovementFragment_
 import it.italiancoders.mybudget.fragment.notification.NotificationsFragment
 import it.italiancoders.mybudget.fragment.notification.NotificationsFragment_
+import it.italiancoders.mybudget.manager.Closure
+import it.italiancoders.mybudget.manager.rest.AccountManager
 import it.italiancoders.mybudget.preferences.ApplicationPreferenceManager
 import it.italiancoders.mybudget.rest.RestClient
+import it.italiancoders.mybudget.rest.model.Account
 import it.italiancoders.mybudget.rest.model.AccountDetails
 import it.italiancoders.mybudget.rest.model.MovementType
 import it.italiancoders.mybudget.utils.FragmentUtils
@@ -35,7 +39,6 @@ import org.androidannotations.annotations.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Exception
 
 
 /**
@@ -70,6 +73,9 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
 
     @Bean
     internal lateinit var preferenceManager: ApplicationPreferenceManager
+
+    @Bean
+    internal lateinit var accountManager: AccountManager
 
     @AfterViews
     internal fun initView() {
@@ -149,12 +155,12 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
     }
 
     @Click
-    internal fun expenseFABClicked() {
+    fun expenseFABClicked() {
         openNewMovement(MovementType.Expense)
     }
 
     @Click
-    internal fun incomingFABClicked() {
+    fun incomingFABClicked() {
         openNewMovement(MovementType.Incoming)
     }
 
@@ -185,36 +191,32 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
     }
 
     override fun onClick(v: View?) {
-        loadAccounts()
-    }
-
-    @Background
-    open fun loadAccounts() {
-        try {
-            val response = RestClient.accountService.getAll().execute()
-            if (response.isSuccessful) {
-                Config.accounts = response.body().orEmpty()
+        accountManager.loadAll(context!!, object : Closure<List<Account>> {
+            override fun onSuccess(result: List<Account>) {
+                Config.accounts = result
                 accountLoaded()
             }
-        } catch (e: Exception) {
-            println()
-        }
+        })
     }
 
     @UiThread
     open fun accountLoaded() {
         preferenceManager.prefs.edit().lastUserAccounts().put(ObjectMapper().writeValueAsString(Config.accounts)).apply()
 
-        MaterialDialog.Builder(activity!!)
+        val accountAdapter = AccountAdapter(context!!)
+        val dialog = MaterialDialog.Builder(activity!!)
                 .iconRes(R.mipmap.ic_launcher_round)
                 .title(R.string.app_name)
                 .content(R.string.account_select)
-                .items(Config.accounts.orEmpty().map { it.name })
-                .itemsCallbackSingleChoice(-1) { _, _, which, _ ->
-                    loadAccountDetails(Config.accounts.orEmpty()[which].id)
-                    true
-                }
-                .show()
+                .adapter(accountAdapter, null)
+                .alwaysCallSingleChoiceCallback().build()
+        accountAdapter.accountCallback = object : AccountAdapter.AccountCallback {
+            override fun onAccountSelected(account: Account) {
+                dialog?.dismiss()
+                loadAccountDetails(account.id)
+            }
+        }
+        dialog.show()
     }
 
     override fun getActionBarTitle(): String? = ""
@@ -261,8 +263,10 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
     }
 
     private fun updateNofitications() {
-        MenuItemBadge.getBadgeTextView((activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotificationUserInvite))?.setBadgeCount(Config.currentAccount?.numberOfPendingAccountInvites
-                ?: 0)
+        val userInviteNotifications = Config.currentAccount?.numberOfPendingAccountInvites ?: 0
+        MenuItemBadge.getBadgeTextView((activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotificationUserInvite))?.setBadgeCount(userInviteNotifications)
+        (activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotificationUserInvite)?.actionView?.visibility = if (userInviteNotifications > 0) View.VISIBLE else View.GONE
+
         MenuItemBadge.getBadgeTextView((activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotification))?.setBadgeCount(0)
     }
 

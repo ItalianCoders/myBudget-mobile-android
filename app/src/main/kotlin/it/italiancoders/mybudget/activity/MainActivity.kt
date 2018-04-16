@@ -151,10 +151,10 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         accountTV.text = Config.currentAccount?.name.orEmpty()
 
         val accountMembersTV = findViewById<TextView>(R.id.accountMembersTV)
-        accountMembersTV.text = "${Config.currentAccount?.members?.size ?: 1}"
+        accountMembersTV.text = "${Config.currentAccount?.numberOfUsers ?: 1}"
 
         val accountMembersLayout = findViewById<ConstraintLayout>(R.id.accountMembersLayout)
-        accountMembersLayout.visibility = if (Config.currentAccount?.members?.size ?: 1 > 1) View.VISIBLE else View.GONE
+        accountMembersLayout.visibility = if (Config.currentAccount?.numberOfUsers ?: 1 > 1) View.VISIBLE else View.GONE
     }
 
     fun toggleAccountTitle(visible: Boolean) {

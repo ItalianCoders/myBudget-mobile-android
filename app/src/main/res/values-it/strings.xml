@@ -126,4 +126,6 @@
     <string name="account_saving">Salvataggio account…</string>
     <string name="account_saving_error">Errore durante il salvataggio dell\'account</string>
     <string name="account_saving_successfull">Salvataggio effettuato con successo</string>
+
+    <string name="accounts_loading">Caricamento account in corso…</string>
 </resources>

@@ -127,4 +127,6 @@
     <string name="account_saving">Account saving…</string>
     <string name="account_saving_error">Error when saving account</string>
     <string name="account_saving_successfull">Account save successfull</string>
+
+    <string name="accounts_loading">Loading accounts…</string>
 </resources>

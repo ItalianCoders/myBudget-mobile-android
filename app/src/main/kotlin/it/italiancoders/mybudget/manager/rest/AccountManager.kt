@@ -10,11 +10,13 @@ import it.italiancoders.mybudget.rest.RestClient
 import it.italiancoders.mybudget.rest.model.Account
 import it.italiancoders.mybudget.rest.model.AccountCreationRequest
 import it.italiancoders.mybudget.rest.model.User
+import org.androidannotations.annotations.Background
 import org.androidannotations.annotations.Bean
 import org.androidannotations.annotations.EBean
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 /**
  * @author fattazzo
@@ -114,5 +116,20 @@ open class AccountManager {
                 closure.onFailure()
             }
         })
+    }
+
+    @Background
+    open fun loadAll(context: Context,closure: Closure<List<Account>>) {
+        dialogManager.openIndeterminateDialog(R.string.accounts_loading, context)
+        try {
+            val response = RestClient.accountService.getAll().execute()
+            if (response.isSuccessful) {
+                closure.onSuccess(response.body().orEmpty())
+            }
+        } catch (e: Exception) {
+            closure.onError()
+        } finally {
+            dialogManager.closeIndeterminateDialog()
+        }
     }
 }
