@@ -9,8 +9,8 @@ android {
         applicationId "it.italiancoders.mybudget"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 28
-        versionName "0.28"
+        versionCode 29
+        versionName "0.29"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "MyBudget")
     }
