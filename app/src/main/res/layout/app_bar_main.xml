@@ -30,7 +30,8 @@
                     android:id="@+id/accountMembersLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp">
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/imageView8"
@@ -64,7 +65,6 @@
                     android:drawableEnd="@drawable/arrow_down_white"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="aaaa"
                     android:textAppearance="@style/TextAppearance.Large"
                     android:textColor="@color/primaryTextColorInverted" />
             </LinearLayout>
