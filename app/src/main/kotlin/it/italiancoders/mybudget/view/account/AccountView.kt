@@ -29,7 +29,7 @@ open class AccountView @JvmOverloads constructor(
     @ViewById
     internal lateinit var membersTV: TextView
 
-    var accountCallback: AccountAdapter.AccountCallback?=null
+    var accountCallback: AccountAdapter.AccountCallback? = null
 
     lateinit var account: Account
 

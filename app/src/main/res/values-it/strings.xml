@@ -72,6 +72,8 @@
     <string name="name">Nome</string>
     <string name="description">Descrizione</string>
     <string name="account">Account</string>
+    <string name="members">Membri</string>
+    <string name="admin">Admin</string>
 
     <string name="save_action">Salva</string>
     <string name="new_f_action">Nuova</string>
@@ -122,9 +124,25 @@
     <string name="reply_sending">Invio risposta…</string>
     <string name="reply_send_error">Errore durante l\'invio della risposta</string>
 
-    <string name="account_saving">Salvataggio account…</string>
+    <string name="account_saving">Salvataggio account</string>
     <string name="account_saving_error">Errore durante il salvataggio dell\'account</string>
     <string name="account_saving_successfull">Salvataggio effettuato con successo</string>
+    <string name="accounts_loading">Caricamento account in corso</string>
+    <string name="account_details_loading">Caricamento dettagli account in corso…</string>
+    <string name="account_details_loading_error">Errore durante il caricamento dei dettagli account</string>
 
-    <string name="accounts_loading">Caricamento account in corso…</string>
+    <string name="kick">Rimuovi</string>
+    <string name="member_kicking_dialog_title">Rimozione membro</string>
+    <string name="member_kicking_dialog_message">Sicuro di voler rimuovere l\'utente %s dall\'account %s?</string>
+    <string name="member_kicking">Rimozione membro in corso</string>
+    <string name="member_kicking_error">Errore durante la rimozione del membro</string>
+
+    <string name="leave">Abbandona</string>
+    <string name="account_leaving_dialog_title">Abbandono account</string>
+    <string name="account_leaving_dialog_message">Sicuro di voler abbandonare l\'account %s?</string>
+    <string name="account_leaving">Abbandono account in corso</string>
+    <string name="account_leaving_error">Errore  durante l\'abbandono account</string>
+
+    <string name="role_changing">Cambio ruolo</string>
+    <string name="role_changing_error">Errore durante il cambio ruolo</string>
 </resources>

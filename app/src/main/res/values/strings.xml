@@ -73,6 +73,8 @@
     <string name="name">Name</string>
     <string name="description">Description</string>
     <string name="account">Account</string>
+    <string name="members">Members</string>
+    <string name="admin">Admin</string>
 
     <string name="save_action">Save</string>
     <string name="new_f_action">New</string>
@@ -123,9 +125,25 @@
     <string name="reply_sending">Sending reply…</string>
     <string name="reply_send_error">Error when send reply</string>
 
-    <string name="account_saving">Account saving…</string>
+    <string name="account_saving">Account saving</string>
     <string name="account_saving_error">Error when saving account</string>
     <string name="account_saving_successfull">Account save successfull</string>
+    <string name="accounts_loading">Loading accounts</string>
+    <string name="account_details_loading">Loading account details…</string>
+    <string name="account_details_loading_error">Error when loading account details</string>
 
-    <string name="accounts_loading">Loading accounts…</string>
+    <string name="kick">Kick</string>
+    <string name="member_kicking_dialog_title">Kick member</string>
+    <string name="member_kicking_dialog_message">Are you sure you want to remove %s from account %s?</string>
+    <string name="member_kicking">Member kicking</string>
+    <string name="member_kicking_error">Error when kicking member</string>
+
+    <string name="leave">Leave</string>
+    <string name="account_leaving_dialog_title">Leave account</string>
+    <string name="account_leaving_dialog_message">Are you sure you want leave account %s?</string>
+    <string name="account_leaving">Account leaving</string>
+    <string name="account_leaving_error">Error when leaving account</string>
+
+    <string name="role_changing">Role changing</string>
+    <string name="role_changing_error">Error when changing role</string>
 </resources>

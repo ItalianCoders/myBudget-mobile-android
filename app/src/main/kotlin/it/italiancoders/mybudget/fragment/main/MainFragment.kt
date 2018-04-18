@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
-import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
@@ -27,7 +26,6 @@ import it.italiancoders.mybudget.fragment.notification.NotificationsFragment_
 import it.italiancoders.mybudget.manager.Closure
 import it.italiancoders.mybudget.manager.rest.AccountManager
 import it.italiancoders.mybudget.preferences.ApplicationPreferenceManager
-import it.italiancoders.mybudget.rest.RestClient
 import it.italiancoders.mybudget.rest.model.Account
 import it.italiancoders.mybudget.rest.model.AccountDetails
 import it.italiancoders.mybudget.rest.model.MovementType
@@ -36,9 +34,6 @@ import it.italiancoders.mybudget.view.WaitingView
 import it.italiancoders.mybudget.view.badge.MenuItemBadge
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.androidannotations.annotations.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 /**
@@ -105,21 +100,20 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
 
     open fun loadAccountDetails(accountId: String) {
         showProgressBar()
-        RestClient.accountService.getAccountDetails(accountId).enqueue(object : Callback<AccountDetails> {
-            override fun onResponse(call: Call<AccountDetails>, response: Response<AccountDetails>) {
+        accountManager.loadAccountDetails(context!!, accountId, false, object : Closure<AccountDetails?> {
+            override fun onSuccess(result: AccountDetails?) {
                 hideProgressBar()
-                if (response.isSuccessful) {
-                    Config.currentAccount = response.body()
-                    Config.currentAccountNeedReload = false
-                    updateUI()
-                } else {
-                    Toast.makeText(activity, resources.getString(R.string.loading_dashboard_error), Toast.LENGTH_SHORT).show()
-                }
+                Config.currentAccount = result
+                Config.currentAccountNeedReload = false
+                updateUI()
             }
 
-            override fun onFailure(call: Call<AccountDetails>?, t: Throwable?) {
+            override fun onError() {
                 hideProgressBar()
-                Toast.makeText(activity, resources.getString(R.string.loading_dashboard_error), Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onFailure() {
+                hideProgressBar()
             }
         })
     }

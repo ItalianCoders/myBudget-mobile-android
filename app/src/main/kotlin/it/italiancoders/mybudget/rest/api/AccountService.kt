@@ -31,4 +31,15 @@ interface AccountService {
 
     @POST("/protected/v1/accounts")
     fun insert(@Body account: AccountCreationRequest): Call<Void>
+
+    @DELETE("/protected/v1/accounts/{id}/kick")
+    fun kickUser(@Path("id") accountId: String, @Query("username") username: String): Call<Void>
+
+    @DELETE("/protected/v1/accounts/{id}/left")
+    fun left(@Path("id") accountId: String): Call<Void>
+
+    @PUT("/protected/v1/accounts/{id}/users/{username}/roles")
+    fun changeUserRole(@Path("id") accountId: String,
+                       @Path("username") username: String,
+                       @Query("role") role: Int): Call<Void>
 }

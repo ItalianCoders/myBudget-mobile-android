@@ -1,8 +1,7 @@
 package it.italiancoders.mybudget.fragment.account
 
 import android.support.design.widget.TextInputEditText
-import android.view.Menu
-import android.view.MenuInflater
+import android.view.View
 import it.italiancoders.mybudget.Config
 import it.italiancoders.mybudget.R
 import it.italiancoders.mybudget.fragment.BaseFragment
@@ -12,6 +11,8 @@ import it.italiancoders.mybudget.manager.rest.AccountManager
 import it.italiancoders.mybudget.rest.model.Account
 import it.italiancoders.mybudget.rest.model.AccountCreationRequest
 import it.italiancoders.mybudget.utils.FragmentUtils
+import it.italiancoders.mybudget.view.account.AccountMemberView
+import it.italiancoders.mybudget.view.account.AccountMembersView
 import org.androidannotations.annotations.*
 
 /**
@@ -20,7 +21,7 @@ import org.androidannotations.annotations.*
  *         date: 14/04/18
  */
 @EFragment(R.layout.fragment_account)
-open class AccountFragment : BaseFragment() {
+open class AccountFragment : BaseFragment(), AccountMemberView.MemberCallback {
 
     @JvmField
     @FragmentArg
@@ -33,6 +34,9 @@ open class AccountFragment : BaseFragment() {
     @ViewById
     internal lateinit var descriptionTIET: TextInputEditText
 
+    @ViewById
+    internal lateinit var accountMembersView: AccountMembersView
+
     @Bean
     lateinit var accountManager: AccountManager
 
@@ -40,17 +44,20 @@ open class AccountFragment : BaseFragment() {
     fun iniViews() {
         nameTIET.text.clear()
         descriptionTIET.text.clear()
+        accountMembersView.visibility = if (account == null) View.GONE else View.VISIBLE
+        accountMembersView.memberCallback = this
 
         if (account != null) {
             nameTIET.text.append(account!!.name)
             descriptionTIET.text.append(account!!.defaultUsername.orEmpty())
+            accountMembersView.updateView(account!!.id)
         } else {
             nameTIET.text.append(getString(R.string.new_m_action))
         }
     }
 
-    @OptionsItem
-    fun menuAccountSaveSelected() {
+    @Click
+    fun saveButtonClicked() {
         if (account != null) {
             account!!.name = nameTIET.text.toString()
             account!!.description = descriptionTIET.text.toString()
@@ -72,8 +79,19 @@ open class AccountFragment : BaseFragment() {
         }
     }
 
-    override fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater?.inflate(R.menu.account, menu)
+    override fun onMemberKicked() {
+        accountMembersView.updateView(account!!.id)
+    }
+
+    override fun onCurrentUserLeave() {
+        Config.currentAccount = null
+        Config.currentAccountNeedReload = true
+        accountManager.loadAll(context!!,object : Closure<List<Account>>{
+            override fun onSuccess(result: List<Account>) {
+                Config.accounts = result
+                backPressed()
+            }
+        })
     }
 
     override fun backPressed(): Boolean {
