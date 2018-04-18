@@ -1,6 +1,8 @@
 package it.italiancoders.mybudget.activity
 
 import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.VectorDrawable
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.NavigationView
@@ -35,6 +37,7 @@ import it.italiancoders.mybudget.preferences.ApplicationPreferenceManager
 import it.italiancoders.mybudget.rest.model.SocialTypeEnum
 import it.italiancoders.mybudget.rest.model.User
 import it.italiancoders.mybudget.utils.FragmentUtils
+import it.italiancoders.mybudget.utils.ImageUtils
 import it.italiancoders.mybudget.utils.LocaleHelper
 import it.italiancoders.mybudget.utils.PermissionsUtil
 import org.androidannotations.annotations.*
@@ -87,9 +90,10 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         LocaleHelper.setLocale(this, preferenceManager.getAppLocale())
 
         if (savedInstanceState == null) {
+            val imageSplash = ImageUtils.getBitmap(ContextCompat.getDrawable(this,R.drawable.splash_image) as VectorDrawable)
             val splash = Splash.Builder(this, null)
                     .setAnimationType(Splash.AnimationType.TYPE_2)
-                    .setSplashImage(resources.getDrawable(R.drawable.pig))
+                    .setSplashImage(BitmapDrawable(resources,imageSplash))//resources.getDrawable(R.drawable.pig))
                     .setOneShotStart(false)
                     .setBackgroundColor(ContextCompat.getColor(this, R.color.primaryColor))
             splash.perform()
