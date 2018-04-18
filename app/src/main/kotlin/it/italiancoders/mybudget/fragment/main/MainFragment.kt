@@ -238,7 +238,7 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater?.inflate(R.menu.main, menu)
 
         val menuItemNotification = menu!!.findItem(R.id.menuNotification)
@@ -257,15 +257,18 @@ open class MainFragment : BaseFragment(), SlidingUpPanelLayout.PanelSlideListene
                 .textBackgroundColor(Color.parseColor("#EF4738"))
                 .textColor(Color.WHITE))
         //MenuItemBadge.getBadgeTextView(menuItemMessage)?.setBadgeCount(Config.currentAccount?.numberOfPendingAccountInvites ?: 0)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?) {
+        super.onPrepareOptionsMenu(menu)
 
         updateNofitications()
-        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun updateNofitications() {
         val userInviteNotifications = Config.currentAccount?.numberOfPendingAccountInvites ?: 0
         MenuItemBadge.getBadgeTextView((activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotificationUserInvite))?.setBadgeCount(userInviteNotifications)
-        (activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotificationUserInvite)?.actionView?.visibility = if (userInviteNotifications > 0) View.VISIBLE else View.GONE
+        (activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotificationUserInvite)?.isVisible = userInviteNotifications > 0
 
         MenuItemBadge.getBadgeTextView((activity as AppCompatActivity).toolbar?.menu?.findItem(R.id.menuNotification))?.setBadgeCount(0)
     }

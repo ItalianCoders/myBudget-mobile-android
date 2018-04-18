@@ -23,7 +23,7 @@
 
     <item
         android:id="@+id/menuEditAccount"
-        android:title="@string/edit_m_action"
+        android:title="@string/edit_action"
         app:showAsAction="never" />
 
     <item

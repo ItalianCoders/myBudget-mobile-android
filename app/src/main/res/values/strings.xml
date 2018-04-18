@@ -77,8 +77,7 @@
     <string name="save_action">Save</string>
     <string name="new_f_action">New</string>
     <string name="new_m_action">New</string>
-    <string name="edit_f_action">Edit</string>
-    <string name="edit_m_action">Edit</string>
+    <string name="edit_action">Edit</string>
     <string name="refresh_action">Refresh</string>
     <string name="search_action">Search</string>
     <string name="delete_action">Delete</string>

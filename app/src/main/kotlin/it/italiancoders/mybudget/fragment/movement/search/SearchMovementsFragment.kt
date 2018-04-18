@@ -175,8 +175,7 @@ open class SearchMovementsFragment : BaseFragment() {
         return R.string.fragment_title_search_movements
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {
         menu?.clear()
-        super.onCreateOptionsMenu(menu, inflater)
     }
 }

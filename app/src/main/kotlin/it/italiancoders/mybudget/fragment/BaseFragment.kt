@@ -77,8 +77,12 @@ open class BaseFragment : Fragment() {
         return null
     }
 
+    open fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {}
+
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater)
+        menu?.clear()
+        createFragmentOptionMenu(menu, inflater)
+
         for (i in 0 until (menu?.size() ?: 0)) {
             val drawable = menu?.getItem(i)?.icon
             if (drawable != null) {

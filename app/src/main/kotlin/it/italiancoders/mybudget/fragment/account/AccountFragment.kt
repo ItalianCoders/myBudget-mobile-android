@@ -72,9 +72,8 @@ open class AccountFragment : BaseFragment() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater?.inflate(R.menu.account, menu)
-        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun backPressed(): Boolean {
@@ -83,7 +82,7 @@ open class AccountFragment : BaseFragment() {
     }
 
     override fun getActionBarTitle(): String? {
-        val action = getString(if (account == null) R.string.new_m_action else R.string.edit_m_action)
+        val action = getString(if (account == null) R.string.new_m_action else R.string.edit_action)
         return "$action ${getString(R.string.account)}"
     }
 }

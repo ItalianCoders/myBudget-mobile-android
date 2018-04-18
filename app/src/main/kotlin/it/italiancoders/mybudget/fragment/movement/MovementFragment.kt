@@ -167,12 +167,11 @@ open class MovementFragment : BaseFragment() {
         return if (movement.id == null) {
             "${getString(R.string.new_f_action)} $movTypeString"
         } else {
-            "${getString(R.string.edit_f_action)} $movTypeString"
+            "${getString(R.string.edit_action)} $movTypeString"
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater?.inflate(R.menu.movement, menu)
-        super.onCreateOptionsMenu(menu, inflater)
     }
 }

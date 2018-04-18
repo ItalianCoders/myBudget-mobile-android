@@ -76,8 +76,7 @@
     <string name="save_action">Salva</string>
     <string name="new_f_action">Nuova</string>
     <string name="new_m_action">Nuovo</string>
-    <string name="edit_f_action">Modifica</string>
-    <string name="edit_m_action">Edit</string>
+    <string name="edit_action">Modifica</string>
     <string name="refresh_action">Ricarica</string>
     <string name="search_action">Cerca</string>
     <string name="delete_action">Cancella</string>
