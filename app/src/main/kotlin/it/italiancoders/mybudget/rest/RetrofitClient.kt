@@ -38,7 +38,10 @@ object RetrofitClient {
 
         val httpClient = httpClientBuilder
         httpClient.addInterceptor { chain ->
-            val request = chain.request().newBuilder().addHeader("x-auth-token", Config.accessToken.orEmpty()).build()
+            val request = chain.request().newBuilder()
+                    .addHeader("x-auth-token", Config.accessToken.orEmpty())
+                    .addHeader("Accept-Language",Config.locale.language)
+                    .build()
             chain.proceed(request)
         }
 
