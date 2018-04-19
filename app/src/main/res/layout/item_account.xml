@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/rootLayout"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@color/background_color_dark"
     android:padding="8dp">
 
     <TextView
@@ -14,6 +18,17 @@
         android:layout_marginEnd="8dp"
         android:layout_toStartOf="@id/membersTV"
         android:textAppearance="@style/TextAppearance.Medium" />
+
+    <TextView
+        android:id="@+id/descriptionTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/textTV"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/membersTV"

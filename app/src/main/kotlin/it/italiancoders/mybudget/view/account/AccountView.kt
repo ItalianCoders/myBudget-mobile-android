@@ -29,6 +29,9 @@ open class AccountView @JvmOverloads constructor(
     @ViewById
     internal lateinit var membersTV: TextView
 
+    @ViewById
+    internal lateinit var descriptionTV: TextView
+
     var accountCallback: AccountAdapter.AccountCallback? = null
 
     lateinit var account: Account
@@ -44,6 +47,9 @@ open class AccountView @JvmOverloads constructor(
         } else {
             membersTV.visibility = View.GONE
         }
+
+        descriptionTV.visibility = if (objectToBind.description.isNullOrBlank()) View.GONE else View.VISIBLE
+        descriptionTV.text = objectToBind.description.orEmpty()
     }
 
     @Click
