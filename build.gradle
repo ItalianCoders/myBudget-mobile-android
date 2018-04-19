@@ -5,7 +5,7 @@ buildscript {
     ext.android_annotation_version = '4.3.1'
     ext.buildToolsVersion = '27.1.1'
     ext.retrofit_version = '2.1.0'
-    ext.constraint_layout_version = '1.0.2'
+    ext.constraint_layout_version = '1.1.0'
     repositories {
         google()
         jcenter()
