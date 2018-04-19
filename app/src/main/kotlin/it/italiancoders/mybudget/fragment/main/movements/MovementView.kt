@@ -114,7 +114,7 @@ open class MovementView @JvmOverloads constructor(context: Context, attrs: Attri
         MaterialDialog.Builder(context)
                 .iconRes(R.drawable.delete)
                 .title(R.string.app_name)
-                .content("_Sicuro di voler cancellare il movimento?")
+                .content(R.string.remove_movement_dialog_text)
                 .positiveText(android.R.string.yes)
                 .negativeText(android.R.string.no)
                 .onPositive { _, _ ->
@@ -124,12 +124,12 @@ open class MovementView @JvmOverloads constructor(context: Context, attrs: Attri
                             if (response.isSuccessful) {
                                 (context as Activity).recreate()
                             } else {
-                                Toast.makeText(context, "_Errore", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
                             }
                         }
 
                         override fun onFailure(call: Call<Void>?, t: Throwable?) {
-                            Toast.makeText(context, "_Errore", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
                         }
                     })
                 }

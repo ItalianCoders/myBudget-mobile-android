@@ -118,12 +118,12 @@ open class SearchMovementsFragment : BaseFragment() {
                         noResultTV.visibility = if (allMovements.isEmpty()) View.VISIBLE else View.GONE
                     })
                 } else {
-                    Toast.makeText(activity, "_Errore", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<Page<Movement>>?, t: Throwable?) {
-                Toast.makeText(activity, "_Errore", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
             }
 
             private fun buildMovement(currentDayParam: String, originalMovement: List<Movement>): List<Movement> {

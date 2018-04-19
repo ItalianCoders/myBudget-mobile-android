@@ -144,13 +144,13 @@ open class MovementFragment : BaseFragment() {
                     if (response.isSuccessful) {
                         backPressed()
                     } else {
-                        Toast.makeText(activity, "_Errore", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<Void>?, t: Throwable?) {
                     closeIndeterminateDialog()
-                    Toast.makeText(activity, "_Errore", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
                 }
             })
         }
@@ -162,7 +162,8 @@ open class MovementFragment : BaseFragment() {
     }
 
     override fun getActionBarTitle(): String? {
-        val movTypeString = if ((movement.type ?: movementType) == MovementType.Expense) getString(R.string.expense_singular) else getString(R.string.incoming_singular)
+        val movTypeString = if ((movement.type
+                        ?: movementType) == MovementType.Expense) getString(R.string.expense_singular) else getString(R.string.incoming_singular)
 
         return if (movement.id == null) {
             "${getString(R.string.new_f_action)} $movTypeString"

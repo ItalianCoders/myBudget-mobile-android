@@ -48,8 +48,12 @@
 
     <string name="invalid_data">Dati inseriti non validi</string>
 
+    <string name="error">Errore</string>
+    <string name="error_try_later">Errore durante l\'operazione, riprova più tardi</string>
+
     <string name="saving_movement">Salvataggio movimento…</string>
     <string name="saving_movement_error">Errore durante il salvataggio del movimento</string>
+    <string name="remove_movement_dialog_text">Sicuro di voler cancellare il movimento?</string>
 
     <string name="loading_dashboard">Caricamento dashboard…</string>
     <string name="loading_dashboard_error">Errore durante il caricamento dei dettagli dell\'account</string>
@@ -126,7 +130,7 @@
 
     <string name="account_saving">Salvataggio account</string>
     <string name="account_saving_error">Errore durante il salvataggio dell\'account</string>
-    <string name="account_saving_successfull">Salvataggio effettuato con successo</string>
+    <string name="account_saving_successful">Salvataggio effettuato con successo</string>
     <string name="accounts_loading">Caricamento account in corso</string>
     <string name="account_details_loading">Caricamento dettagli account in corso…</string>
     <string name="account_details_loading_error">Errore durante il caricamento dei dettagli account</string>

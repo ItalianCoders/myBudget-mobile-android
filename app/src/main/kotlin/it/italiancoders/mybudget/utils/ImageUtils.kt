@@ -34,7 +34,7 @@ object ImageUtils {
                 imageView.alpha = 0f
                 Picasso.get().load(imageUrl).into(imageView, object : Callback {
                     override fun onSuccess() {
-                        val imageBitmap = (imageView.getDrawable() as BitmapDrawable).bitmap
+                        val imageBitmap = (imageView.drawable as BitmapDrawable).bitmap
                         val imageDrawable = RoundedBitmapDrawableFactory.create(context.resources, imageBitmap)
                         imageDrawable.isCircular = true
                         imageDrawable.cornerRadius = Math.max(imageBitmap.width, imageBitmap.height) / 2.0f

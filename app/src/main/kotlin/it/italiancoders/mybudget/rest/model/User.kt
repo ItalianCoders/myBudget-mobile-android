@@ -13,7 +13,7 @@ class User : Serializable {
     lateinit var username: String
 
     @JsonProperty(value = "password")
-    val password: String? = null
+    var password: String? = null
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     @JsonProperty("email")

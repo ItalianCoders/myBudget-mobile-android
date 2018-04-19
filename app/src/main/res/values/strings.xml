@@ -49,8 +49,12 @@
 
     <string name="invalid_data">Data entered invalid</string>
 
+    <string name="error">Error</string>
+    <string name="error_try_later">Error during the operation, please try again later</string>
+
     <string name="saving_movement">Saving movement…</string>
     <string name="saving_movement_error">Error when saving movement</string>
+    <string name="remove_movement_dialog_text">Are you sure you want to delete the movement?</string>
 
     <string name="loading_dashboard">Loading dashboard…</string>
     <string name="loading_dashboard_error">Error when loading account details</string>
@@ -127,7 +131,7 @@
 
     <string name="account_saving">Account saving</string>
     <string name="account_saving_error">Error when saving account</string>
-    <string name="account_saving_successfull">Account save successfull</string>
+    <string name="account_saving_successful">Account save successful</string>
     <string name="accounts_loading">Loading accounts</string>
     <string name="account_details_loading">Loading account details…</string>
     <string name="account_details_loading_error">Error when loading account details</string>

@@ -58,6 +58,11 @@ open class AccountFragment : BaseFragment(), AccountMemberView.MemberCallback {
 
     @Click
     fun saveButtonClicked() {
+        nameTIET.error = null
+        if (nameTIET.text.toString().isEmpty()) {
+            nameTIET.error = getString(R.string.required)
+            return
+        }
         if (account != null) {
             account!!.name = nameTIET.text.toString()
             account!!.description = descriptionTIET.text.toString()
@@ -86,7 +91,7 @@ open class AccountFragment : BaseFragment(), AccountMemberView.MemberCallback {
     override fun onCurrentUserLeave() {
         Config.currentAccount = null
         Config.currentAccountNeedReload = true
-        accountManager.loadAll(context!!,object : Closure<List<Account>>{
+        accountManager.loadAll(context!!, object : Closure<List<Account>> {
             override fun onSuccess(result: List<Account>) {
                 Config.accounts = result
                 backPressed()

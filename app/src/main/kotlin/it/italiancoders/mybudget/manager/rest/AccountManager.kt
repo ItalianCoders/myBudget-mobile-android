@@ -80,7 +80,7 @@ open class AccountManager {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 dialogManager.closeIndeterminateDialog()
                 if (response.isSuccessful) {
-                    Toast.makeText(context, context.resources.getString(R.string.account_saving_successfull), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.resources.getString(R.string.account_saving_successful), Toast.LENGTH_SHORT).show()
                     closure.onSuccess()
                 } else {
                     Toast.makeText(context, context.resources.getString(R.string.account_saving_error), Toast.LENGTH_SHORT).show()
@@ -129,7 +129,7 @@ open class AccountManager {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 dialogManager.closeIndeterminateDialog()
                 if (response.isSuccessful) {
-                    Toast.makeText(context, context.resources.getString(R.string.account_saving_successfull), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.resources.getString(R.string.account_saving_successful), Toast.LENGTH_SHORT).show()
                     closure.onSuccess()
                 } else {
                     Toast.makeText(context, context.resources.getString(R.string.account_saving_error), Toast.LENGTH_SHORT).show()
@@ -168,14 +168,11 @@ open class AccountManager {
                 if (response.isSuccessful) {
                     closure.onSuccess()
                 } else {
-                    val error = ErrorParser.parse(response.errorBody()?.string().orEmpty())
-                    val title = error?.title ?: "_Errore"
-                    val content = error?.detail
-                            ?: context.resources.getString(R.string.member_kicking_error)
+                    val error = ErrorParser.parse(context, response.errorBody()?.string().orEmpty(), detailResId = R.string.member_kicking_error)
                     MaterialDialog.Builder(context)
                             .iconRes(R.drawable.cancel)
-                            .title(title)
-                            .content(content)
+                            .title(error.title.orEmpty())
+                            .content(error.detail.orEmpty())
                             .positiveText(android.R.string.ok)
                             .show()
                     closure.onError()
@@ -190,7 +187,7 @@ open class AccountManager {
         })
     }
 
-    fun leave(context: Context, accountId : String, closure: Closure<Void>) {
+    fun leave(context: Context, accountId: String, closure: Closure<Void>) {
         dialogManager.openIndeterminateDialog(R.string.account_leaving, context)
         RestClient.accountService.left(accountId).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
@@ -221,14 +218,11 @@ open class AccountManager {
                 } else {
 
                     try {
-                        val error = ErrorParser.parse(response.errorBody()?.string().orEmpty())
-                        val title = error?.title ?: "_Errore"
-                        val content = error?.detail
-                                ?: context.resources.getString(R.string.role_changing_error)
+                        val error = ErrorParser.parse(context, response.errorBody()?.string().orEmpty(), detailResId = R.string.role_changing_error)
                         MaterialDialog.Builder(context)
                                 .iconRes(R.drawable.cancel)
-                                .title(title)
-                                .content(content)
+                                .title(error.title.orEmpty())
+                                .content(error.detail.orEmpty())
                                 .positiveText(android.R.string.ok)
                                 .show()
                         closure.onError()
