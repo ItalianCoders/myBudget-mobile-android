@@ -21,6 +21,7 @@ import it.italiancoders.mybudget.rest.RestClient
 import it.italiancoders.mybudget.rest.model.JwtAuthenticationRequest
 import it.italiancoders.mybudget.rest.model.RegistrationUser
 import it.italiancoders.mybudget.rest.model.SocialTypeEnum
+import it.italiancoders.mybudget.rest.model.User
 import it.italiancoders.mybudget.utils.FragmentUtils
 import org.androidannotations.annotations.Background
 import org.androidannotations.annotations.Bean
@@ -44,6 +45,7 @@ open class AuthManager {
 
     enum class RegistrationResult { Success, Error;
 
+        var user: User? = null
         var description: String? = null
     }
 
@@ -144,6 +146,8 @@ open class AuthManager {
             try {
                 if (response.isSuccessful) {
                     registrationResult = RegistrationResult.Success
+                    registrationResult.user = response.body()
+                    registrationResult.user!!.password = registrationUser.password
                 } else {
                     val jsonError = response.errorBody()?.string().orEmpty()
                     val node = ObjectMapper().readValue(jsonError, ObjectNode::class.java)
@@ -164,8 +168,11 @@ open class AuthManager {
     protected open fun registrationComplete(registrationResult: RegistrationResult, activity: Activity?) {
         when (registrationResult) {
             RegistrationResult.Success -> {
-                Toast.makeText(activity, activity!!.resources.getString(R.string.registration_successfully), Toast.LENGTH_SHORT).show()
-                FragmentUtils.replace(activity, WelcomeFragment_.builder().build())
+                login(registrationResult.user?.username.orEmpty(),
+                        registrationResult.user?.password.orEmpty(),
+                        SocialTypeEnum.None,
+                        "",
+                        activity)
             }
             RegistrationResult.Error -> Toast.makeText(activity, registrationResult.description, Toast.LENGTH_SHORT).show()
         }
