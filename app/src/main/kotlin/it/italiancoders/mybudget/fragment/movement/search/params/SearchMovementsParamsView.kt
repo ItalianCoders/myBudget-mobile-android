@@ -46,8 +46,8 @@ open class SearchMovementsParamsView @JvmOverloads constructor(
 
     private val categories: ArrayList<Category> by lazy {
         val catTmp = mutableListOf<Category>()
-        catTmp.addAll(Config.currentAccount?.incomingCategoriesAvalaible.orEmpty())
-        catTmp.addAll(Config.currentAccount?.expenseCategoriesAvalaible.orEmpty())
+        catTmp.addAll(Config.currentAccount?.incomingCategoriesAvailable.orEmpty())
+        catTmp.addAll(Config.currentAccount?.expenseCategoriesAvailable.orEmpty())
 
         val accountCategories = arrayListOf<Category>()
         accountCategories.addAll(catTmp.sortedWith(kotlin.Comparator { cat1, cat2 -> cat1.value.orEmpty().compareTo(cat2.value.orEmpty()) }))

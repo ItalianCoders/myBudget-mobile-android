@@ -512,4 +512,5 @@ class LoginButton : View {
         return context.getString(stringId).toUpperCase()
     }
 
+    fun getOnLoginListener() : OnLoginListener? = onLoginListener
 }

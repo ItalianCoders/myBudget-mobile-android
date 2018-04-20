@@ -1,0 +1,869 @@
+{
+  "incomingCategoriesAvailable": [
+    {
+      "type": 0,
+      "id": "16",
+      "value": "Generico",
+      "isEditable": false,
+      "iconId": 16
+    },
+    {
+      "type": 0,
+      "id": "2",
+      "value": "Regalo",
+      "isEditable": false,
+      "iconId": 2
+    },
+    {
+      "type": 0,
+      "id": "0",
+      "value": "Risparmi",
+      "isEditable": false,
+      "iconId": 0
+    },
+    {
+      "type": 0,
+      "id": "1",
+      "value": "Stipendio",
+      "isEditable": false,
+      "iconId": 1
+    }
+  ],
+  "expenseCategoriesAvailable": [
+    {
+      "type": 1,
+      "id": "3",
+      "value": "Abbigliamento",
+      "isEditable": false,
+      "iconId": 3
+    },
+    {
+      "type": 1,
+      "id": "4",
+      "value": "Animali",
+      "isEditable": false,
+      "iconId": 4
+    },
+    {
+      "type": 1,
+      "id": "5",
+      "value": "Auto",
+      "isEditable": false,
+      "iconId": 5
+    },
+    {
+      "type": 1,
+      "id": "6",
+      "value": "Bollete",
+      "isEditable": false,
+      "iconId": 6
+    },
+    {
+      "type": 1,
+      "id": "7",
+      "value": "Casa",
+      "isEditable": false,
+      "iconId": 7
+    },
+    {
+      "type": 1,
+      "id": "8",
+      "value": "Cibo",
+      "isEditable": false,
+      "iconId": 8
+    },
+    {
+      "type": 1,
+      "id": "10",
+      "value": "Cura del corpo",
+      "isEditable": false,
+      "iconId": 10
+    },
+    {
+      "type": 1,
+      "id": "17",
+      "value": "Generico",
+      "isEditable": false,
+      "iconId": 16
+    },
+    {
+      "type": 1,
+      "id": "11",
+      "value": "Mangiare Fuori",
+      "isEditable": false,
+      "iconId": 11
+    },
+    {
+      "type": 1,
+      "id": "12",
+      "value": "Regalo",
+      "isEditable": false,
+      "iconId": 12
+    },
+    {
+      "type": 1,
+      "id": "13",
+      "value": "Salute",
+      "isEditable": false,
+      "iconId": 13
+    },
+    {
+      "type": 1,
+      "id": "14",
+      "value": "Sport",
+      "isEditable": false,
+      "iconId": 14
+    },
+    {
+      "type": 1,
+      "id": "9",
+      "value": "Telefono",
+      "isEditable": false,
+      "iconId": 9
+    },
+    {
+      "type": 1,
+      "id": "15",
+      "value": "Trasporti",
+      "isEditable": false,
+      "iconId": 15
+    }
+  ],
+  "totalMonthlyIncoming": 3000,
+  "totalMonthlyExpense": 84098,
+  "incomingOverviewMovement": {
+    "0": 32,
+    "1": 1703,
+    "2": 215,
+    "16": 1050
+  },
+  "expenseOverviewMovement": {
+    "3": 2695,
+    "4": 10300,
+    "5": 6800,
+    "6": 6800,
+    "7": 16150,
+    "8": 11905,
+    "9": 17850,
+    "10": 11070,
+    "11": 500,
+    "17": 28
+  },
+  "lastMovements": [
+    {
+      "id": "71868717-a925-4ca0-bb82-928a43968395",
+      "type": 1,
+      "amount": 28,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523397528,
+      "uptadedAt": 1523397529,
+      "note": "hh",
+      "category": {
+        "type": 1,
+        "id": "17",
+        "value": "Generico",
+        "isEditable": false,
+        "iconId": 16
+      },
+      "auto": false
+    },
+    {
+      "id": "ac088cf2-350b-4439-a7d0-750031097b7f",
+      "type": 0,
+      "amount": 1555,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523369129,
+      "uptadedAt": 1523967311,
+      "note": "Note movimento",
+      "category": {
+        "type": 0,
+        "id": "1",
+        "value": "Stipendio",
+        "isEditable": false,
+        "iconId": 1
+      },
+      "auto": false
+    },
+    {
+      "id": "b1bcde96-8767-4650-9088-2cc641f05070",
+      "type": 0,
+      "amount": 200,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523282549,
+      "uptadedAt": 1523282555,
+      "note": null,
+      "category": {
+        "type": 0,
+        "id": "2",
+        "value": "Regalo",
+        "isEditable": false,
+        "iconId": 2
+      },
+      "auto": false
+    },
+    {
+      "id": "7211d47d-47c8-4f2b-acb9-dfb42948f8b7",
+      "type": 0,
+      "amount": 147,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523281184,
+      "uptadedAt": 1523281185,
+      "note": null,
+      "category": {
+        "type": 0,
+        "id": "1",
+        "value": "Stipendio",
+        "isEditable": false,
+        "iconId": 1
+      },
+      "auto": false
+    },
+    {
+      "id": "a6e66a23-30da-4ef1-968f-0257aeda9973",
+      "type": 0,
+      "amount": 1000,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523277653,
+      "uptadedAt": 1523309195,
+      "note": null,
+      "category": {
+        "type": 0,
+        "id": "16",
+        "value": "Generico",
+        "isEditable": false,
+        "iconId": 16
+      },
+      "auto": false
+    },
+    {
+      "id": "3971bc0e-12e4-47b5-9162-fdab65cefa7a",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125603,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "6",
+        "value": "Bollete",
+        "isEditable": false,
+        "iconId": 6
+      },
+      "auto": false
+    },
+    {
+      "id": "88d35b98-5ec2-4016-a064-85b8bdd5011a",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125602,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "6",
+        "value": "Bollete",
+        "isEditable": false,
+        "iconId": 6
+      },
+      "auto": false
+    },
+    {
+      "id": "ab488ea0-bbe6-4ce9-afcd-ebab292a7238",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125604,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "6",
+        "value": "Bollete",
+        "isEditable": false,
+        "iconId": 6
+      },
+      "auto": false
+    },
+    {
+      "id": "3591141d-9543-473b-b429-5094cf46c16f",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125545,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "649b267e-f323-4e26-a063-11757b4ef0b4",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125535,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "3",
+        "value": "Abbigliamento",
+        "isEditable": false,
+        "iconId": 3
+      },
+      "auto": false
+    },
+    {
+      "id": "d6fda324-00a0-44bd-b12a-d931f24d4bd8",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125546,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "98ef55d4-f220-4a15-a017-4ae2ef387033",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125548,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "84a82271-0a20-4fc9-9a3a-cefcd5f97aec",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125601,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "6",
+        "value": "Bollete",
+        "isEditable": false,
+        "iconId": 6
+      },
+      "auto": false
+    },
+    {
+      "id": "92710566-7878-464e-97d6-1b3adbadd99a",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125590,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "6b5dd9b4-41cd-4dfe-b2de-f3d2e0a50310",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125599,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "6",
+        "value": "Bollete",
+        "isEditable": false,
+        "iconId": 6
+      },
+      "auto": false
+    },
+    {
+      "id": "7fb51d79-a630-4b08-b367-fd6cb4472061",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125558,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "6c6b9844-5274-4f77-a696-b3c9e016f646",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125557,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "96892e1c-6ce2-466d-948c-54ae9e8e7b2e",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125534,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "3",
+        "value": "Abbigliamento",
+        "isEditable": false,
+        "iconId": 3
+      },
+      "auto": false
+    },
+    {
+      "id": "fede0d42-7ee1-4c83-8475-69d4921429b2",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125559,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "c22c7f40-28ae-4c33-aa45-a8b338aef8c7",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125560,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "9977d170-4a35-4152-a4ff-949ced43e06e",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125561,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "fdb144fd-929f-4cb6-86fb-4ee0eff6e48b",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125584,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "094444e9-ca3e-423e-b486-48923ee95375",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125585,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "2d040d17-6b79-4925-b01b-71b86805939a",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125586,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "1e52a5bf-7183-4134-bd5e-2eec4b5d4480",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125587,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "f24ce8af-8543-4e89-ac9f-2266808034de",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125588,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "f2b51a54-3398-4f29-95e2-d199e6e082a1",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125550,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "bb760775-d346-4e1c-ae20-f77cbae188cf",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125591,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "5",
+        "value": "Auto",
+        "isEditable": false,
+        "iconId": 5
+      },
+      "auto": false
+    },
+    {
+      "id": "6519ae1f-c9f9-4331-b9e7-e48f29ac04c0",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125551,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    },
+    {
+      "id": "5381b464-6227-4c07-bc39-156a79a3d1bb",
+      "type": 1,
+      "amount": 850,
+      "executedBy": {
+        "username": "qqqq",
+        "firstname": "aaaa",
+        "lastname": "aaa",
+        "alias": "qqqq",
+        "socialType": 0
+      },
+      "executedAt": 1523125374,
+      "uptadedAt": 1523125556,
+      "note": "prova",
+      "category": {
+        "type": 1,
+        "id": "4",
+        "value": "Animali",
+        "isEditable": false,
+        "iconId": 4
+      },
+      "auto": false
+    }
+  ],
+  "members": [
+    {
+      "username": "dario.frongillo@gmail.com",
+      "alias": "dario frongillo",
+      "profileImageUrl": "https://lh6.googleusercontent.com/-iewme6rb4VA/AAAAAAAAAAI/AAAAAAAAADk/Z-ftDOysK58/s96-c/photo.jpg"
+    },
+    {
+      "username": "qqqq",
+      "alias": "qqqq"
+    },
+    {
+      "username": "1886821314979753",
+      "alias": "Dario Frongy",
+      "profileImageUrl": "http://graph.facebook.com/1886821314979753/picture?type=square"
+    }
+  ],
+  "administrators": [
+    "dario.frongillo@gmail.com",
+    "1886821314979753"
+  ],
+  "numberOfPendingAccountInvites": 0,
+  "name": "Other",
+  "id": "3",
+  "status": 0,
+  "numberOfUsers": 1
+}

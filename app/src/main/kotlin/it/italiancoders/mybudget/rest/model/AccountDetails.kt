@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 class AccountDetails : Account() {
 
-    @JsonProperty("incomingCategoriesAvalaible")
-    val incomingCategoriesAvalaible: List<Category>? = null
-    @JsonProperty("expenseCategoriesAvalaible")
-    val expenseCategoriesAvalaible: List<Category>? = null
+    @JsonProperty("incomingCategoriesAvailable")
+    val incomingCategoriesAvailable: List<Category>? = null
+    @JsonProperty("expenseCategoriesAvailable")
+    val expenseCategoriesAvailable: List<Category>? = null
 
     @JsonProperty("totalMonthlyIncoming")
     val totalMonthlyIncoming: Double? = null
@@ -16,7 +16,7 @@ class AccountDetails : Account() {
     val totalMonthlyExpense: Double? = null
 
     @JsonProperty("incomingOverviewMovement")
-    val incomingOverviewMovement: Map<String, Double>? = null
+    var incomingOverviewMovement: Map<String, Double>? = null
     @JsonProperty("expenseOverviewMovement")
     val expenseOverviewMovement: Map<String, Double>? = null
 

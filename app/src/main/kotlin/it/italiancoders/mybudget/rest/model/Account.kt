@@ -18,10 +18,10 @@ open class Account : Serializable {
     var description: String? = null
 
     @JsonProperty("status")
-    val status: AccountStatusEnum? = null
+    var status: AccountStatusEnum? = null
 
     @JsonProperty("numberOfUsers")
-    val numberOfUsers: Int? = null
+    var numberOfUsers: Int? = null
 
     @JsonIgnore
     val defaultUsername: String? = null

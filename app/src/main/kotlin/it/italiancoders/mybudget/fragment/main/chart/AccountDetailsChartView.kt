@@ -158,8 +158,8 @@ open class AccountDetailsChartView @JvmOverloads constructor(context: Context, a
         val accountDetails = Config.currentAccount
         if (accountDetails != null) {
             val categoryMap = mutableMapOf<String, Category>()
-            accountDetails.expenseCategoriesAvalaible.orEmpty().forEach { categoryMap[it.id.orEmpty()] = it }
-            accountDetails.incomingCategoriesAvalaible.orEmpty().forEach { categoryMap[it.id.orEmpty()] = it }
+            accountDetails.expenseCategoriesAvailable.orEmpty().forEach { categoryMap[it.id.orEmpty()] = it }
+            accountDetails.incomingCategoriesAvailable.orEmpty().forEach { categoryMap[it.id.orEmpty()] = it }
 
             var expTotal = 0F
             val expensDataMap = mutableMapOf<Category, Float>()

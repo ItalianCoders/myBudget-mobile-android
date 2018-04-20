@@ -15,7 +15,7 @@ object RestClient {
     /**
      * Base url of REST api
      */
-    private const val BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
+    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
 
     val authService: AuthService
         get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)

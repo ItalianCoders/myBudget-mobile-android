@@ -52,12 +52,12 @@ open class MovementFragment : BaseFragment() {
 
     private val categories: List<Category> by lazy {
         val accountCategories = when (movementType) {
-            MovementType.Incoming -> Config.currentAccount?.incomingCategoriesAvalaible.orEmpty()
-            MovementType.Expense -> Config.currentAccount?.expenseCategoriesAvalaible.orEmpty()
+            MovementType.Incoming -> Config.currentAccount?.incomingCategoriesAvailable.orEmpty()
+            MovementType.Expense -> Config.currentAccount?.expenseCategoriesAvailable.orEmpty()
             MovementType.Both -> {
                 val catTmp = mutableListOf<Category>()
-                catTmp.addAll(Config.currentAccount?.incomingCategoriesAvalaible.orEmpty())
-                catTmp.addAll(Config.currentAccount?.expenseCategoriesAvalaible.orEmpty())
+                catTmp.addAll(Config.currentAccount?.incomingCategoriesAvailable.orEmpty())
+                catTmp.addAll(Config.currentAccount?.expenseCategoriesAvailable.orEmpty())
                 catTmp.toList()
             }
         }
