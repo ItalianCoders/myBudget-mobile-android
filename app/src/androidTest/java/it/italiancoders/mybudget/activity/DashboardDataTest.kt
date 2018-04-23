@@ -47,20 +47,29 @@ class DashboardDataTest : BaseTest() {
     }
 
     private fun performHeaderDataTest() {
-        onView(withId(R.id.incTotalContentTV)).check(matches(withText("3.000,00€")))
+
+        val accountDetails: AccountDetails = JsonTestHelper.getJsonObject(InstrumentationRegistry.getInstrumentation().context, "personalAccountDetails.json", object : TypeReference<AccountDetails>() {})
+        val incTot = accountDetails.totalMonthlyIncoming ?: 0.0
+        val expTot = accountDetails.totalMonthlyExpense ?: 0.0
+
+        val incTotStr = dataUtils.formatCurrency(incTot)
+        val expTotStr = dataUtils.formatCurrency(expTot)
+        val difTotStr = dataUtils.formatCurrency(incTot - expTot,showSign = true)
+
+        onView(withId(R.id.incTotalContentTV)).check(matches(withText(incTotStr)))
         onView(withId(R.id.incTotalContentTV)).check(matches(withTextViewTextColor(R.color.primaryColor)))
 
-        onView(withId(R.id.expTotalContentTV)).check(matches(withText("84.098,00€")))
+        onView(withId(R.id.expTotalContentTV)).check(matches(withText(expTotStr)))
         onView(withId(R.id.expTotalContentTV)).check(matches(withTextViewTextColor(R.color.light_red)))
 
-        onView(withId(R.id.diffTotalContentTV)).check(matches(withText("-81.098,00€")))
+        onView(withId(R.id.diffTotalContentTV)).check(matches(withText(difTotStr)))
         onView(withId(R.id.diffTotalContentTV)).check(matches(withTextViewTextColor(android.R.color.holo_blue_light)))
     }
 
     @Test
     fun chartDataTest() {
         val type = InstrumentationRegistry.getTargetContext().resources.getString(R.string.chart_type_expense)
-        onView(withId(R.id.titleTV)).check(matches(withText("Aprile 2018 - $type")))
+        onView(withId(R.id.titleTV)).check(matches(withText("April 2018 - $type")))
 
         performChartTypeTest(R.string.chart_type_summary)
         rotateLandscape()
@@ -84,7 +93,7 @@ class DashboardDataTest : BaseTest() {
     }
 
     private fun performChartTypeTest(typeResId: Int) {
-        val title = "Aprile 2018"
+        val title = "April 2018"
         val type = InstrumentationRegistry.getTargetContext().resources.getString(typeResId)
 
         onView(withId(R.id.chartTypeIV)).perform(click())
@@ -115,7 +124,6 @@ class DashboardDataTest : BaseTest() {
                         index++
                         true
                     } catch (e: NoMatchingViewException) {
-                        println("Indice movimento $index")
                         false
                     }
                 }

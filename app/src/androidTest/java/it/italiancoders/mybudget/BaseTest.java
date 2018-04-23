@@ -13,6 +13,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.File;
@@ -26,6 +27,7 @@ import okhttp3.mockwebserver.MockWebServer;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
+import static junit.framework.Assert.assertEquals;
 
 /**
  * @author fattazzo
@@ -37,10 +39,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
 @RunWith(AndroidJUnit4.class)
 public class BaseTest {
 
-    private static MockWebServer server;
-
     protected static DataUtils dataUtils;
-
+    private static MockWebServer server;
     @Rule
     public ActivityTestRule<MainActivity_> mainActivityTestRule = new ActivityTestRule<>(MainActivity_.class, true, false);
 
@@ -71,8 +71,8 @@ public class BaseTest {
                     .putString("lastUserAccounts", "[{\"id\": \"3\",\"name\": \"Other\",\"status\": 0,\"numberOfUsers\": 1},{\"id\": \"2\",\"name\": \"Family\",\"status\": 0,\"numberOfUsers\": 3},{\"id\": \"1\",\"name\": \"Personal\",\"status\": 0,\"numberOfUsers\": 1}]")
                     .putInt("accountType", 0)
                     .putString("lastUser", "{\"alias\":\"qqqq\",\"firstname\":\"aaaa\",\"lastname\":\"aaa\",\"password\":null,\"socialType\":0,\"username\":\"qqqq\"}")
-                    .putString("language","IT")
-                    .putString("currency","EUR")
+                    .putString("language", "EN")
+                    .putString("currency", "EUR")
                     .commit();
         }
     }
@@ -85,6 +85,12 @@ public class BaseTest {
                     .clear()
                     .commit();
         }
+    }
+
+    @Test
+    public void useAppContext() {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        assertEquals("it.italiancoders.mybudget", appContext.getPackageName());
     }
 
     @Before
@@ -101,7 +107,6 @@ public class BaseTest {
                 .setResponseCode(code)
                 .setBody(JsonTestHelper.getStringFromFile(InstrumentationRegistry.getInstrumentation().getContext(), fileName)));
     }
-
 
 
     /**
