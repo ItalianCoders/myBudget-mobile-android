@@ -108,7 +108,7 @@ open class AuthManager {
             if (response.isSuccessful) {
                 val loginResult = LoginResult.Valid
                 loginResult.refreshToken = response.body()!!.refreshToken
-                loginResult.accessToken = response.headers().get("X-Auth-Token")
+                loginResult.accessToken = response.body()!!.accessToken
                 loginResult.user = response.body()!!.user
                 loginResult.accounts = response.body()!!.accounts
                 loginResult.socialAuthenticationType = socialAuthenticationType
