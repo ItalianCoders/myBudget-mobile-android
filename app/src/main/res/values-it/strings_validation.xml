@@ -2,4 +2,7 @@
 <resources>
     <string name="required">Richiesto</string>
     <string name="required_min_chars">Richiesto, min. %s caratteri</string>
+
+    <string name="required_date">Richiesto (formato %s)</string>
+    <string name="date_format_dd_mm_yyyyy">gg/mm/aaaa</string>
 </resources>

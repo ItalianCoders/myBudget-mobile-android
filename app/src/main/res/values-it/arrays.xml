@@ -16,4 +16,18 @@
         <item>@string/chart_type_incoming</item>
         <item>@string/chart_type_details</item>
     </string-array>
+
+    <string-array name="scheduled_frequency">
+        <item>Settimanale</item>
+        <item>Mensile</item>
+        <item>Ogni tre mesi</item>
+        <item>Ogni sei mesi</item>
+        <item>Annuale</item>
+    </string-array>
+
+    <string-array name="movement_type">
+        <item>Entrata</item>
+        <item>Uscita</item>
+        <item>Entrambe</item>
+    </string-array>
 </resources>

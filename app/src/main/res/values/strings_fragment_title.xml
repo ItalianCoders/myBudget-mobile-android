@@ -3,4 +3,8 @@
     <string name="fragment_title_welcome">Login</string>
     <string name="fragment_title_search_movements">Search movements</string>
     <string name="fragment_title_notification">Notifications</string>
+
+    <string name="fragment_sheduled_movements">Scheduled movements</string>
+    <string name="fragment_sheduled_movement_new">New scheduled movement</string>
+    <string name="fragment_sheduled_movement_edit">Edit scheduled movement</string>
 </resources>

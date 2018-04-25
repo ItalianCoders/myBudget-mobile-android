@@ -17,4 +17,6 @@
     <dimen name="login_bottom_width">126dp</dimen>
     <dimen name="login_bottom_height">66dp</dimen>
     <integer name="login_action_bottom_distance">60</integer>
+
+    <integer name="scheduled_movements_columns">1</integer>
 </resources>

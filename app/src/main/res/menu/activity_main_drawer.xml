@@ -4,9 +4,19 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/nav_search_movements"
-        android:icon="@drawable/search"
-        android:title="@string/movements" />
+        android:id="@+id/nav_group_movements"
+        android:title="@string/movements">
+        <menu>
+            <item
+                android:id="@+id/nav_search_movements"
+                android:icon="@drawable/search"
+                android:title="@string/search_action" />
+            <item
+                android:id="@+id/nav_auto_movements"
+                android:icon="@drawable/schedule"
+                android:title="@string/scheduled" />
+        </menu>
+    </item>
 
     <item
         android:id="@+id/nav_settings"

@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: RestClient.kt
+ * File: ScheduledFrequencyView.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -25,34 +25,38 @@
  * SOFTWARE.
  */
 
-package it.italiancoders.mybudget.rest
+package it.italiancoders.mybudget.view
 
-import it.italiancoders.mybudget.rest.api.*
+import android.content.Context
+import android.util.AttributeSet
+import android.widget.LinearLayout
+import android.widget.TextView
+import it.italiancoders.mybudget.R
+import it.italiancoders.mybudget.adapter.base.BindableView
+import it.italiancoders.mybudget.rest.model.ScheduledFrequencyEnum
+import org.androidannotations.annotations.EViewGroup
+import org.androidannotations.annotations.ViewById
+import org.androidannotations.annotations.res.StringArrayRes
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 28/03/18
+ *         date: 23/04/18
  */
-object RestClient {
+@EViewGroup(R.layout.item_scheduled_frequency)
+open class ScheduledFrequencyView @JvmOverloads constructor(
+        context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+) : LinearLayout(context, attrs, defStyleAttr), BindableView<ScheduledFrequencyEnum> {
 
-    /**
-     * Base url of REST api
-     */
-    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
+    @ViewById
+    internal lateinit var valueTV: TextView
 
-    val authService: AuthService
-        get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)
+    @StringArrayRes(R.array.scheduled_frequency)
+    internal lateinit var frequencyEnumDescription: Array<String>
 
-    val accountService: AccountService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(AccountService::class.java)
 
-    val movementService: MovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(MovementService::class.java)
+    override fun bind(objectToBind: ScheduledFrequencyEnum) {
 
-    val pendingInvitesService: PendingInvitesService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(PendingInvitesService::class.java)
-
-    val scheduledMovementService: ScheduledMovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(ScheduledMovementService::class.java)
+        valueTV.text = frequencyEnumDescription[objectToBind.value]
+    }
 }

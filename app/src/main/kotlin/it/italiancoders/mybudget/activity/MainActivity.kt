@@ -1,3 +1,30 @@
+/*
+ * Project: myBudget-mobile-android
+ * File: MainActivity.kt
+ *
+ * Created by fattazzo
+ * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
+ *
+ * MIT License
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package it.italiancoders.mybudget.activity
 
 import android.content.Intent
@@ -23,6 +50,7 @@ import it.italiancoders.mybudget.R
 import it.italiancoders.mybudget.fragment.BaseFragment
 import it.italiancoders.mybudget.fragment.login.WelcomeFragment_
 import it.italiancoders.mybudget.fragment.main.MainFragment_
+import it.italiancoders.mybudget.fragment.movement.auto.ScheduledMovementsFragment_
 import it.italiancoders.mybudget.fragment.movement.search.SearchMovementsFragment_
 import it.italiancoders.mybudget.manager.rest.AuthManager
 import it.italiancoders.mybudget.manager.rest.AuthManager.Companion.EXTRA_LOGIN_ID
@@ -90,10 +118,10 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         LocaleHelper.setLocale(this, preferenceManager.getAppLocale())
 
         if (savedInstanceState == null) {
-            val imageSplash = ImageUtils.getBitmap(ContextCompat.getDrawable(this,R.drawable.splash_image) as VectorDrawable)
+            val imageSplash = ImageUtils.getBitmap(ContextCompat.getDrawable(this, R.drawable.splash_image) as VectorDrawable)
             val splash = Splash.Builder(this, null)
                     .setAnimationType(Splash.AnimationType.TYPE_2)
-                    .setSplashImage(BitmapDrawable(resources,imageSplash))//resources.getDrawable(R.drawable.pig))
+                    .setSplashImage(BitmapDrawable(resources, imageSplash))//resources.getDrawable(R.drawable.pig))
                     .setOneShotStart(false)
                     .setBackgroundColor(ContextCompat.getColor(this, R.color.primaryColor))
             splash.perform()
@@ -131,7 +159,8 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         when (menuItem.itemId) {
             R.id.nav_settings -> PreferenceActivity_.intent(this).start()
             R.id.nav_logout -> authManager.logout(this)
-            R.id.nav_search_movements -> FragmentUtils.replace(this, SearchMovementsFragment_.builder().build(), animationType = FragmentUtils.AnimationType.SLIDE)
+            R.id.nav_search_movements -> FragmentUtils.replace(this, SearchMovementsFragment_.builder().build())
+            R.id.nav_auto_movements -> FragmentUtils.replace(this, ScheduledMovementsFragment_.builder().build())
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)

@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: MovementType.kt
+ * File: ScheduledMovementSettings.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -27,32 +27,58 @@
 
 package it.italiancoders.mybudget.rest.model
 
-import com.fasterxml.jackson.annotation.JsonCreator
-import com.fasterxml.jackson.annotation.JsonValue
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.io.Serializable
 
-/**  custom enum
- *
- * Svn revision:1530
+
+/**
+ * @author fattazzo
+ *         <p/>
+ *         date: 23/04/18
  */
-enum class MovementType constructor(@get:JsonValue val value: Int) : Serializable {
+class ScheduledMovementSettings : Serializable {
 
-    Incoming(0), Expense(1), Both(2);
+    @JsonProperty("id")
+    var id: String = ""
 
-    override fun toString(): String {
-        return value.toString()
-    }
+    var name: String = ""
 
-    companion object {
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    @JsonProperty("description")
+    var description: String? = null
 
-        @JsonCreator
-        fun fromValue(text: String): MovementType? {
-            for (b in MovementType.values()) {
-                if (b.value.toString() == text) {
-                    return b
-                }
-            }
-            return null
-        }
+    @JsonProperty("start")
+    var start: Long? = null
+
+    @JsonProperty("end")
+    var end: Long? = null
+
+    @JsonIgnore
+    val movementDate: Long? = null
+
+    @JsonProperty("frequency")
+    var frequency: ScheduledFrequencyEnum? = null
+
+    @JsonProperty("account")
+    var account: Account? = null
+
+    @JsonProperty("amount")
+    var amount: Double? = null
+
+    @JsonProperty("category")
+    var category: Category? = null
+
+    @JsonProperty("user")
+    var user: User? = null
+
+    @JsonProperty("movementType")
+    var type: MovementType? = null
+
+    fun isValid(): Boolean {
+        return name.isNotBlank() && start != null && frequency != null &&
+                account != null && amount != null && category != null && user != null &&
+                type != null
     }
 }

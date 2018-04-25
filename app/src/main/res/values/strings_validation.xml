@@ -2,4 +2,7 @@
 <resources>
     <string name="required">Required</string>
     <string name="required_min_chars">Required, min. chars %s</string>
+
+    <string name="required_date">Required (%s format)</string>
+    <string name="date_format_dd_mm_yyyyy">dd/mm/yyyy</string>
 </resources>

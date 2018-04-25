@@ -78,6 +78,11 @@
     <string name="account">Account</string>
     <string name="members">Membri</string>
     <string name="admin">Admin</string>
+    <string name="scheduled">Programmati</string>
+    <string name="start">Inizio</string>
+    <string name="end">Fine</string>
+    <string name="frequency">Frequenza</string>
+    <string name="movement_type">Tipo</string>
 
     <string name="save_action">Salva</string>
     <string name="new_f_action">Nuova</string>
@@ -149,4 +154,11 @@
 
     <string name="role_changing">Cambio ruolo</string>
     <string name="role_changing_error">Errore durante il cambio ruolo</string>
+
+    <string name="scheduled_movements_loading">Caricamento movimenti pianificati</string>
+    <string name="scheduled_movements_loading_error">Errore durante il caricamento dei movimenti pianificati</string>
+    <string name="no_scheduled_movements">Nessun movimento pianificato presente</string>
+    <string name="scheduled_movement_saving">Salvataggio movimento pianificato</string>
+
+    <string name="remove_scheduled_movement_dialog_text">icuro di voler cancellare il movimento pianificato?</string>
 </resources>

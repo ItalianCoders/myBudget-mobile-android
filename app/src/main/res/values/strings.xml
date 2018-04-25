@@ -79,6 +79,11 @@
     <string name="account">Account</string>
     <string name="members">Members</string>
     <string name="admin">Admin</string>
+    <string name="scheduled">Scheduled</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="frequency">Frequency</string>
+    <string name="movement_type">Type</string>
 
     <string name="save_action">Save</string>
     <string name="new_f_action">New</string>
@@ -150,4 +155,11 @@
 
     <string name="role_changing">Role changing</string>
     <string name="role_changing_error">Error when changing role</string>
+
+    <string name="scheduled_movements_loading">Scheduled movements loading</string>
+    <string name="scheduled_movements_loading_error">Error when loading scheduled movements</string>
+    <string name="no_scheduled_movements">No scheduled movements found</string>
+    <string name="scheduled_movement_saving">Scheduled movement saving</string>
+
+    <string name="remove_scheduled_movement_dialog_text">Are you sure you want to delete the scheduled movement?</string>
 </resources>

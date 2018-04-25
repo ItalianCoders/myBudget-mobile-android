@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: RestClient.kt
+ * File: ScheduledMovementService.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -25,34 +25,25 @@
  * SOFTWARE.
  */
 
-package it.italiancoders.mybudget.rest
+package it.italiancoders.mybudget.rest.api
 
-import it.italiancoders.mybudget.rest.api.*
+import it.italiancoders.mybudget.rest.model.ScheduledMovementSettings
+import retrofit2.Call
+import retrofit2.http.*
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 28/03/18
+ *         date: 23/04/18
  */
-object RestClient {
+interface ScheduledMovementService {
 
-    /**
-     * Base url of REST api
-     */
-    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
+    @GET("/protected/v1/accounts/{accountId}/scheduled-movements")
+    fun loadAll(@Path("accountId") accountId: String): Call<List<ScheduledMovementSettings>>
 
-    val authService: AuthService
-        get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)
+    @DELETE("/protected/v1/accounts/{accountId}/scheduled-movements/{id}")
+    fun delete(@Path("accountId") accountId: String, @Path("id") settingsId: String): Call<Void>
 
-    val accountService: AccountService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(AccountService::class.java)
-
-    val movementService: MovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(MovementService::class.java)
-
-    val pendingInvitesService: PendingInvitesService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(PendingInvitesService::class.java)
-
-    val scheduledMovementService: ScheduledMovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(ScheduledMovementService::class.java)
+    @POST("/protected/v1/accounts/{accountId}/scheduled-movements")
+    fun save(@Path("accountId") accountId: String, @Body scheduledMovementSettings: ScheduledMovementSettings): Call<Void>
 }

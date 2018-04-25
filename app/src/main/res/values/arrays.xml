@@ -45,4 +45,18 @@
         <item>@drawable/category_transport</item>
         <item>@drawable/category_general</item>
     </array>
+
+    <string-array name="scheduled_frequency">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Every three month</item>
+        <item>Every six month</item>
+        <item>Every year</item>
+    </string-array>
+
+    <string-array name="movement_type">
+        <item>Incoming</item>
+        <item>Expense</item>
+        <item>Both</item>
+    </string-array>
 </resources>

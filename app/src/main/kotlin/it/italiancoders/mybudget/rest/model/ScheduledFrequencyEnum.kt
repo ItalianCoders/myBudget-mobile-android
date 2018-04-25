@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: RestClient.kt
+ * File: ScheduledFrequencyEnum.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -25,34 +25,35 @@
  * SOFTWARE.
  */
 
-package it.italiancoders.mybudget.rest
+package it.italiancoders.mybudget.rest.model
 
-import it.italiancoders.mybudget.rest.api.*
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonValue
+import java.io.Serializable
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 28/03/18
+ *         date: 23/04/18
  */
-object RestClient {
+enum class ScheduledFrequencyEnum(@get:JsonValue val value: Int) : Serializable {
 
-    /**
-     * Base url of REST api
-     */
-    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
+    Weekly(0), Monthly(1), EveryThreeMonth(2), EverySixMonth(3), EveryYear(4);
 
-    val authService: AuthService
-        get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)
+    override fun toString(): String {
+        return value.toString()
+    }
 
-    val accountService: AccountService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(AccountService::class.java)
+    companion object {
 
-    val movementService: MovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(MovementService::class.java)
-
-    val pendingInvitesService: PendingInvitesService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(PendingInvitesService::class.java)
-
-    val scheduledMovementService: ScheduledMovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(ScheduledMovementService::class.java)
+        @JsonCreator
+        fun fromValue(valore: Int): ScheduledFrequencyEnum? {
+            for (b in ScheduledFrequencyEnum.values()) {
+                if (b.value == valore) {
+                    return b
+                }
+            }
+            return null
+        }
+    }
 }

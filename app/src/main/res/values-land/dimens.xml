@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="login_action_bottom_distance">-100</integer>
+
+    <integer name="scheduled_movements_columns">2</integer>
 </resources>

@@ -9,8 +9,8 @@ android {
         applicationId "it.italiancoders.mybudget"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 32
-        versionName "0.32"
+        versionCode 33
+        versionName "0.33"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "MyBudget")
     }
@@ -98,7 +98,6 @@ dependencies {
     implementation 'pro.appus:zoom-splash:1.0.1'
 
     implementation 'com.qintong:insLoadingAnimation:1.1.0'
-
 
     implementation 'gr.escsoft.michaelprimez.revealedittext:RevealEditText:1.0.2'
 
