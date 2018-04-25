@@ -84,6 +84,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     internal lateinit var toolbar: Toolbar
 
     internal lateinit var currentUserTV: TextView
+    internal lateinit var currentUserImage: ImageView
     internal lateinit var editCurrentUserImage: ImageView
 
     @Bean
@@ -105,6 +106,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val headerView = navView.getHeaderView(0)
 
         currentUserTV = headerView.findViewById(R.id.currentUserTV)
+        currentUserImage = headerView.findViewById(R.id.currentUserImage)
         editCurrentUserImage = headerView.findViewById(R.id.editCurrentUserImage)
 
         Config.userListener = this
@@ -170,12 +172,15 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     override fun onChange(oldUser: User?, newUser: User?) {
         currentUserTV.text = ""
         currentUserTV.visibility = View.GONE
+        currentUserImage.visibility=View.GONE
         editCurrentUserImage.visibility = View.GONE
 
         newUser?.let {
             currentUserTV.text = newUser.alias ?: newUser.username ?: newUser.email
             currentUserTV.visibility = View.VISIBLE
+            currentUserImage.visibility = View.VISIBLE
             editCurrentUserImage.visibility = View.VISIBLE
+            ImageUtils.loadImage(this,currentUserImage,it.profileImageUrl,R.drawable.user)
         }
     }
 
