@@ -157,7 +157,11 @@ open class ScheduledMovementSettingsFragment : BaseFragment() {
     }
 
     private fun updateSettings() {
-
+        scheduledMovementsManager.update(context!!, scheduledMovementSettings, object : Closure<Void> {
+            override fun onSuccess() {
+                backPressed()
+            }
+        })
     }
 
     @Click

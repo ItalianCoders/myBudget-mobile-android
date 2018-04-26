@@ -46,4 +46,9 @@ interface ScheduledMovementService {
 
     @POST("/protected/v1/accounts/{accountId}/scheduled-movements")
     fun save(@Path("accountId") accountId: String, @Body scheduledMovementSettings: ScheduledMovementSettings): Call<Void>
+
+    @PUT("/protected/v1/accounts/{accountId}/scheduled-movements/{id}")
+    fun update(@Path("accountId") accountId: String,
+               @Path("id") settingsId: String,
+               @Body scheduledMovementSettings: ScheduledMovementSettings): Call<Void>
 }

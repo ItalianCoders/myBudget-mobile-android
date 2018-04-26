@@ -33,6 +33,7 @@ import it.italiancoders.mybudget.Config
 import it.italiancoders.mybudget.R
 import it.italiancoders.mybudget.manager.Closure
 import it.italiancoders.mybudget.manager.DialogManager
+import it.italiancoders.mybudget.rest.ErrorParser
 import it.italiancoders.mybudget.rest.RestClient
 import it.italiancoders.mybudget.rest.model.ScheduledMovementSettings
 import org.androidannotations.annotations.Bean
@@ -81,7 +82,28 @@ open class ScheduledMovementsManager {
                 if (response.isSuccessful) {
                     closure.onSuccess()
                 } else {
-                    Toast.makeText(context, context.resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
+                    ErrorParser.parseAndShow(context,response.errorBody()?.string().orEmpty())
+                    closure.onError()
+                }
+            }
+
+            override fun onFailure(call: Call<Void>?, t: Throwable?) {
+                dialogManager.closeIndeterminateDialog()
+                Toast.makeText(context, context.resources.getString(R.string.error_try_later), Toast.LENGTH_SHORT).show()
+                closure.onFailure()
+            }
+        })
+    }
+
+    fun update(context: Context, scheduledMovementSettings: ScheduledMovementSettings, closure: Closure<Void>) {
+        dialogManager.openIndeterminateDialog(R.string.scheduled_movement_saving, context)
+        RestClient.scheduledMovementService.update(Config.currentAccount?.id.orEmpty(), scheduledMovementSettings.id, scheduledMovementSettings).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                dialogManager.closeIndeterminateDialog()
+                if (response.isSuccessful) {
+                    closure.onSuccess()
+                } else {
+                    ErrorParser.parseAndShow(context,response.errorBody()?.string().orEmpty())
                     closure.onError()
                 }
             }

@@ -29,7 +29,6 @@ package it.italiancoders.mybudget.manager.rest
 
 import android.content.Context
 import android.widget.Toast
-import com.afollestad.materialdialogs.MaterialDialog
 import it.italiancoders.mybudget.Config
 import it.italiancoders.mybudget.R
 import it.italiancoders.mybudget.manager.Closure
@@ -195,13 +194,7 @@ open class AccountManager {
                 if (response.isSuccessful) {
                     closure.onSuccess()
                 } else {
-                    val error = ErrorParser.parse(context, response.errorBody()?.string().orEmpty(), detailResId = R.string.member_kicking_error)
-                    MaterialDialog.Builder(context)
-                            .iconRes(R.drawable.cancel)
-                            .title(error.title.orEmpty())
-                            .content(error.detail.orEmpty())
-                            .positiveText(android.R.string.ok)
-                            .show()
+                    ErrorParser.parseAndShow(context, response.errorBody()?.string().orEmpty(), detailResId = R.string.member_kicking_error)
                     closure.onError()
                 }
             }
@@ -243,15 +236,8 @@ open class AccountManager {
                 if (response.isSuccessful) {
                     closure.onSuccess()
                 } else {
-
                     try {
-                        val error = ErrorParser.parse(context, response.errorBody()?.string().orEmpty(), detailResId = R.string.role_changing_error)
-                        MaterialDialog.Builder(context)
-                                .iconRes(R.drawable.cancel)
-                                .title(error.title.orEmpty())
-                                .content(error.detail.orEmpty())
-                                .positiveText(android.R.string.ok)
-                                .show()
+                        ErrorParser.parseAndShow(context, response.errorBody()?.string().orEmpty(), detailResId = R.string.role_changing_error)
                         closure.onError()
                     } catch (e: Exception) {
                         e.printStackTrace()

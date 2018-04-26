@@ -28,6 +28,7 @@
 package it.italiancoders.mybudget.rest
 
 import android.content.Context
+import com.afollestad.materialdialogs.MaterialDialog
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import it.italiancoders.mybudget.R
@@ -56,5 +57,15 @@ object ErrorParser {
             }
         }
         return defaultError
+    }
+
+    fun parseAndShow(context: Context, jsonError: String?, titleResId: Int = R.string.error, detailResId: Int = R.string.error_try_later) {
+        val error = parse(context, jsonError, titleResId, detailResId)
+        MaterialDialog.Builder(context)
+                .iconRes(R.drawable.cancel)
+                .title(error.title.orEmpty())
+                .content(error.detail.orEmpty())
+                .positiveText(android.R.string.ok)
+                .show()
     }
 }

@@ -31,9 +31,12 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import it.italiancoders.mybudget.Config
 import okhttp3.OkHttpClient
+import okhttp3.Request
+import okio.Buffer
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
+import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 
@@ -67,11 +70,25 @@ object RetrofitClient {
         httpClient.addInterceptor { chain ->
             val request = chain.request().newBuilder()
                     .addHeader("x-auth-token", Config.accessToken.orEmpty())
-                    .addHeader("Accept-Language",Config.locale.language)
+                    .addHeader("Accept-Language", Config.locale.language)
                     .build()
+            println(bodyToString(request))
             chain.proceed(request)
         }
 
         return Retrofit.Builder().client(httpClient.build()).baseUrl(baseUrl).addConverterFactory(converterFactory).build()
+    }
+
+    private fun bodyToString(request: Request): String {
+
+        return try {
+            val copy = request.newBuilder().build()
+            val buffer = Buffer()
+            copy.body()?.writeTo(buffer)
+            buffer.readUtf8()
+        } catch (e: IOException) {
+            "did not work"
+        }
+
     }
 }

@@ -9,8 +9,8 @@ android {
         applicationId "it.italiancoders.mybudget"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 33
-        versionName "0.33"
+        versionCode 34
+        versionName "0.34"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "MyBudget")
     }
@@ -102,9 +102,9 @@ dependencies {
     implementation 'gr.escsoft.michaelprimez.revealedittext:RevealEditText:1.0.2'
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
 
     androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.8.0'
 }

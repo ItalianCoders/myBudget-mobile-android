@@ -27,10 +27,11 @@
 
 package it.italiancoders.mybudget.fragment.movement.auto
 
-import android.support.design.widget.FloatingActionButton
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.widget.TextView
 import it.italiancoders.mybudget.R
@@ -51,9 +52,6 @@ import org.androidannotations.annotations.*
  */
 @EFragment(R.layout.fragment_scheduled_movements)
 open class ScheduledMovementsFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener, RecyclerViewAdapterBase.OnItemClickListener<ScheduledMovementSettings> {
-
-    @ViewById
-    internal lateinit var addAutoMovementFAB: FloatingActionButton
 
     @ViewById
     internal lateinit var noMovementsTV: TextView
@@ -110,15 +108,15 @@ open class ScheduledMovementsFragment : BaseFragment(), SwipeRefreshLayout.OnRef
         adapter.items = scheduledMovements
 
         scheduledMovementsRecyclerView.adapter = adapter
-        scheduledMovementsRecyclerView.layoutManager = GridLayoutManager(context,resources.getInteger(R.integer.scheduled_movements_columns))
+        scheduledMovementsRecyclerView.layoutManager = GridLayoutManager(context, resources.getInteger(R.integer.scheduled_movements_columns))
     }
 
     override fun onItemClick(item: ScheduledMovementSettings?) {
         openSettingsFragment(item)
     }
 
-    @Click
-    fun addAutoMovementFABClicked() {
+    @OptionsItem
+    fun menuScheduledMovementsAddSelected() {
         openSettingsFragment()
     }
 
@@ -126,6 +124,10 @@ open class ScheduledMovementsFragment : BaseFragment(), SwipeRefreshLayout.OnRef
         FragmentUtils.replace(activity, ScheduledMovementSettingsFragment_.builder().scheduledMovementSettings(settings
                 ?: ScheduledMovementSettings()).build())
         scheduledMovements.clear()
+    }
+
+    override fun createFragmentOptionMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.scheduled_movements, menu)
     }
 
     override fun backPressed(): Boolean {
