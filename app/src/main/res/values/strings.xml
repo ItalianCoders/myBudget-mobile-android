@@ -40,7 +40,7 @@
     <string name="movements">Movements</string>
 
     <string name="last_movements">Last movements</string>
-    
+
     <string name="incoming">Incoming</string>
     <string name="incoming_singular">Incoming</string>
     <string name="expense">Expense</string>
@@ -84,6 +84,11 @@
     <string name="end">End</string>
     <string name="frequency">Frequency</string>
     <string name="movement_type">Type</string>
+    <string name="spent">Spent</string>
+    <string name="alertThreshold">Alert threshold</string>
+
+    <string name="notification_push">Push notification</string>
+    <string name="notification_mail">Email notification</string>
 
     <string name="save_action">Save</string>
     <string name="new_f_action">New</string>
@@ -102,6 +107,7 @@
 
     <string name="all_f">All</string>
     <string name="all_m">All</string>
+    <string name="all_categories">All categories</string>
 
     <string name="year">Year</string>
     <string name="month">Month</string>
@@ -162,4 +168,11 @@
     <string name="scheduled_movement_saving">Scheduled movement saving</string>
 
     <string name="remove_scheduled_movement_dialog_text">Are you sure you want to delete the scheduled movement?</string>
+
+    <string name="budgets_account_loading">Loading budgets</string>
+    <string name="budget_deleting">Deleting budget</string>
+    <string name="budget_saving">Saving budget</string>
+    <string name="no_budgets_found">No budgets found</string>
+
+    <string name="remove_budget_dialog_text">Are you sure you want to delete the budget?</string>
 </resources>

@@ -41,7 +41,7 @@ import it.italiancoders.mybudget.rest.model.Error
  */
 object ErrorParser {
 
-    fun parse(context: Context, jsonError: String?, titleResId: Int = R.string.error, detailResId: Int = R.string.error_try_later): Error {
+    private fun parse(context: Context, jsonError: String?, titleResId: Int = R.string.error, detailResId: Int = R.string.error_try_later): Error {
         val defaultError = Error()
         defaultError.title = context.resources.getString(titleResId)
         defaultError.detail = context.resources.getString(detailResId)

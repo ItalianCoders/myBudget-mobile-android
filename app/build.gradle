@@ -9,8 +9,8 @@ android {
         applicationId "it.italiancoders.mybudget"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 34
-        versionName "0.34"
+        versionCode 36
+        versionName "0.36"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "MyBudget")
     }
@@ -100,6 +100,10 @@ dependencies {
     implementation 'com.qintong:insLoadingAnimation:1.1.0'
 
     implementation 'gr.escsoft.michaelprimez.revealedittext:RevealEditText:1.0.2'
+
+    implementation 'me.itangqi.waveloadingview:library:0.3.5'
+
+    implementation 'com.xw.repo:bubbleseekbar:3.17-lite'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

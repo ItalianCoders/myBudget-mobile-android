@@ -19,6 +19,11 @@
     </item>
 
     <item
+        android:id="@+id/nav_budgets"
+        android:icon="@drawable/budget"
+        android:title="@string/fragment_budgets" />
+
+    <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/settings"
         android:title="@string/settings" />

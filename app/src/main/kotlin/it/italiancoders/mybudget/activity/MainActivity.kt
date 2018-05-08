@@ -48,6 +48,7 @@ import com.appus.splash.Splash
 import it.italiancoders.mybudget.Config
 import it.italiancoders.mybudget.R
 import it.italiancoders.mybudget.fragment.BaseFragment
+import it.italiancoders.mybudget.fragment.budget.BudgetsFragment_
 import it.italiancoders.mybudget.fragment.login.WelcomeFragment_
 import it.italiancoders.mybudget.fragment.main.MainFragment_
 import it.italiancoders.mybudget.fragment.movement.auto.ScheduledMovementsFragment_
@@ -163,6 +164,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             R.id.nav_logout -> authManager.logout(this)
             R.id.nav_search_movements -> FragmentUtils.replace(this, SearchMovementsFragment_.builder().build())
             R.id.nav_auto_movements -> FragmentUtils.replace(this, ScheduledMovementsFragment_.builder().build())
+            R.id.nav_budgets -> FragmentUtils.replace(this, BudgetsFragment_.builder().build())
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -172,7 +174,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
     override fun onChange(oldUser: User?, newUser: User?) {
         currentUserTV.text = ""
         currentUserTV.visibility = View.GONE
-        currentUserImage.visibility=View.GONE
+        currentUserImage.visibility = View.GONE
         editCurrentUserImage.visibility = View.GONE
 
         newUser?.let {
@@ -180,7 +182,7 @@ open class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
             currentUserTV.visibility = View.VISIBLE
             currentUserImage.visibility = View.VISIBLE
             editCurrentUserImage.visibility = View.VISIBLE
-            ImageUtils.loadImage(this,currentUserImage,it.profileImageUrl,R.drawable.user)
+            ImageUtils.loadImage(this, currentUserImage, it.profileImageUrl, R.drawable.user)
         }
     }
 

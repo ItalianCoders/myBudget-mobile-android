@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: RestClient.kt
+ * File: BudgetsAdapter.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -25,37 +25,21 @@
  * SOFTWARE.
  */
 
-package it.italiancoders.mybudget.rest
+package it.italiancoders.mybudget.adapter
 
-import it.italiancoders.mybudget.rest.api.*
+import android.content.Context
+import it.italiancoders.mybudget.adapter.base.BindableView
+import it.italiancoders.mybudget.adapter.base.recycler.RecyclerViewAdapterBase
+import it.italiancoders.mybudget.rest.model.Budget
+import it.italiancoders.mybudget.view.BudgetView_
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 28/03/18
+ *         date: 24/04/18
  */
-object RestClient {
+class BudgetsAdapter(context: Context, onItemClickListener: OnItemClickListener<Budget>? = null) :
+        RecyclerViewAdapterBase<Budget>(context, onItemClickListener) {
 
-    /**
-     * Base url of REST api
-     */
-    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
-
-    val authService: AuthService
-        get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)
-
-    val accountService: AccountService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(AccountService::class.java)
-
-    val movementService: MovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(MovementService::class.java)
-
-    val pendingInvitesService: PendingInvitesService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(PendingInvitesService::class.java)
-
-    val scheduledMovementService: ScheduledMovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(ScheduledMovementService::class.java)
-
-    val budgetService: BudgetService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(BudgetService::class.java)
+    override fun onCreateItemView(context: Context): BindableView<Budget> = BudgetView_.build(context)
 }

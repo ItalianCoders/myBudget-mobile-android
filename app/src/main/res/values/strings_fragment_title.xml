@@ -7,4 +7,8 @@
     <string name="fragment_sheduled_movements">Scheduled movements</string>
     <string name="fragment_sheduled_movement_new">New scheduled movement</string>
     <string name="fragment_sheduled_movement_edit">Edit scheduled movement</string>
+
+    <string name="fragment_budgets">Budgets</string>
+    <string name="fragment_budget_new">New Budget</string>
+    <string name="fragment_budget_edit">Edit Budget</string>
 </resources>

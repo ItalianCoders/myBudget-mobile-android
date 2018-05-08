@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: RestClient.kt
+ * File: BudgetService.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -25,37 +25,31 @@
  * SOFTWARE.
  */
 
-package it.italiancoders.mybudget.rest
+package it.italiancoders.mybudget.rest.api
 
-import it.italiancoders.mybudget.rest.api.*
+import it.italiancoders.mybudget.rest.model.Budget
+import retrofit2.Call
+import retrofit2.http.*
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 28/03/18
+ *         date: 07/05/18
  */
-object RestClient {
+interface BudgetService {
 
-    /**
-     * Base url of REST api
-     */
-    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
+    @GET("/protected/v1/accounts/{accountId}/budgets")
+    fun loadAll(@Path("accountId") accountId: String): Call<List<Budget>>
 
-    val authService: AuthService
-        get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)
+    @DELETE("/protected/v1/accounts/{accountId}/budgets/{budgetId}")
+    fun delete(@Path("accountId") accountId: String, @Path("budgetId") budgetId: String): Call<Void>
 
-    val accountService: AccountService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(AccountService::class.java)
+    @PUT("/protected/v1/accounts/{accountId}/budgets/{budgetId}")
+    fun edit(@Path("accountId") accountId: String,
+             @Path("budgetId") budgetId: String,
+             @Body budget: Budget): Call<Void>
 
-    val movementService: MovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(MovementService::class.java)
-
-    val pendingInvitesService: PendingInvitesService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(PendingInvitesService::class.java)
-
-    val scheduledMovementService: ScheduledMovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(ScheduledMovementService::class.java)
-
-    val budgetService: BudgetService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(BudgetService::class.java)
+    @POST("/protected/v1/accounts/{accountId}/budgets/{budgetId}")
+    fun insert(@Path("accountId") accountId: String,
+               @Body budget: Budget): Call<Void>
 }

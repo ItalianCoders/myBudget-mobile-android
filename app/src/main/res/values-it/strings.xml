@@ -83,6 +83,11 @@
     <string name="end">Fine</string>
     <string name="frequency">Frequenza</string>
     <string name="movement_type">Tipo</string>
+    <string name="spent">Speso</string>
+    <string name="alertThreshold">Soglia di allerta</string>
+
+    <string name="notification_push">Notifiche push</string>
+    <string name="notification_mail">Notifiche email</string>
 
     <string name="save_action">Salva</string>
     <string name="new_f_action">Nuova</string>
@@ -101,6 +106,7 @@
 
     <string name="all_f">Tutte</string>
     <string name="all_m">Tutti</string>
+    <string name="all_categories">Tutte le categorie</string>
 
     <string name="year">Anno</string>
     <string name="month">Mese</string>
@@ -160,5 +166,11 @@
     <string name="no_scheduled_movements">Nessun movimento pianificato presente</string>
     <string name="scheduled_movement_saving">Salvataggio movimento pianificato</string>
 
-    <string name="remove_scheduled_movement_dialog_text">icuro di voler cancellare il movimento pianificato?</string>
+    <string name="remove_scheduled_movement_dialog_text">Sicuro di voler cancellare il movimento pianificato?</string>
+
+    <string name="budgets_account_loading">Caricamento budgets</string>
+    <string name="budget_deleting">Cancellazione budget</string>
+    <string name="no_budgets_found">Nessun budget presente</string>
+
+    <string name="remove_budget_dialog_text">Sicuro di voler cancellare il budget?</string>
 </resources>

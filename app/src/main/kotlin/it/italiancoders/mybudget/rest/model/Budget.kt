@@ -1,6 +1,6 @@
 /*
  * Project: myBudget-mobile-android
- * File: RestClient.kt
+ * File: Budget.kt
  *
  * Created by fattazzo
  * Copyright © 2018 Gianluca Fattarsi. All rights reserved.
@@ -25,37 +25,54 @@
  * SOFTWARE.
  */
 
-package it.italiancoders.mybudget.rest
+package it.italiancoders.mybudget.rest.model
 
-import it.italiancoders.mybudget.rest.api.*
+import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.annotation.JsonProperty
+import java.io.Serializable
+
 
 /**
  * @author fattazzo
  *         <p/>
- *         date: 28/03/18
+ *         date: 07/05/18
  */
-object RestClient {
+class Budget : Serializable {
 
-    /**
-     * Base url of REST api
-     */
-    var BASE_URL = "https://floating-ravine-25522.herokuapp.com/"
+    @JsonProperty("id")
+    var id: String? = null
 
-    val authService: AuthService
-        get() = RetrofitClient.getClient(BASE_URL).create(AuthService::class.java)
+    @JsonProperty("name")
+    lateinit var name: String
 
-    val accountService: AccountService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(AccountService::class.java)
+    @JsonProperty("amount")
+    var amount: Double = 0.0
 
-    val movementService: MovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(MovementService::class.java)
+    @JsonProperty("amountSpent")
+    var amountSpent: Double = 0.0
 
-    val pendingInvitesService: PendingInvitesService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(PendingInvitesService::class.java)
+    @JsonProperty("account")
+    lateinit var account: Account
 
-    val scheduledMovementService: ScheduledMovementService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(ScheduledMovementService::class.java)
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    @JsonProperty("description")
+    var description: String? = null
 
-    val budgetService: BudgetService
-        get() = RetrofitClient.getSecureClient(BASE_URL).create(BudgetService::class.java)
+    @JsonProperty("category")
+    var category: Category? = null
+
+    @JsonProperty("frequency")
+    lateinit var frequency: ScheduledFrequencyEnum
+
+    @JsonProperty("alertThreshold")
+    var alertThreshold: Double? = null
+
+    @JsonProperty("isEnableAlertPushNotification")
+    var isEnableAlertPushNotification: Boolean = false
+
+    @JsonProperty("isEnableAlertMail")
+    var isEnableAlertMail: Boolean = false
+
+    @JsonProperty("monthlyStatus")
+    var currentStatus: AccountStatusEnum? = null
 }
